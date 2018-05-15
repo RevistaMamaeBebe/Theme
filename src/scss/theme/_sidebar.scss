@@ -1,0 +1,104 @@
+$w: 320px;
+$h: 120px;
+
+.sidebar-menu {
+    min-width:  $w;
+    max-width:  $w;
+    height:     100%;
+    position:   fixed;
+    top:        0;
+    left:       -$w;
+    z-index:    9999;
+    transition: all 0.3s;
+    background: #FFF;
+
+    &.active {
+        left: 0;
+    }
+
+    .dismiss {
+        color:    #FFF;
+        position: absolute;
+        right:    10px;
+        top:      0;
+        padding:  10px;
+        cursor:   pointer;
+    }
+
+    .sidebar-header {
+        height:           $h;
+        line-height:      $h;
+        padding:          0 20px;
+        background-color: rgba(#000, 0.02);
+    }
+
+    .content {
+        height: calc(100vh - #{$h});
+    }
+
+    ul {
+        margin: 0;
+        li {
+            font-family: 'Open Sans', cursive;
+            a {
+                padding:         18px 20px;
+                display:         block;
+                color:           lighten(color('bg'), 10%);
+                text-transform:  uppercase;
+                text-decoration: none;
+                font-weight:     700;
+                border-bottom:   1px solid #F9F9F9;
+                position:        relative;
+                @include rem(font-size, 8px);
+
+                &:hover,
+                &:focus {
+                    color: color('info');
+                }
+
+                &:after,
+                &:before {
+                    font: normal normal normal 12px/1 FontAwesome;
+                }
+
+            }
+
+            &.dropdown {
+                > a {
+                    &:after {
+                        content:       "\f107";
+                        position:      absolute;
+                        right:         15px;
+                        top:           50%;
+                        transform:     translate(0, -50%);
+                        width:         18px;
+                        height:        18px;
+                        line-height:   18px;
+                        text-align:    center;
+                        display:       inline-block;
+                        border-radius: 50%;
+                        border:        1px solid darken(color('light'), 20%);
+                        color:         darken(color('light'), 20%);
+                    }
+                }
+
+                ul {
+                    border-bottom: 1px solid #F8F8F8;
+                    li {
+                        padding-left: 15px;
+                        a {
+                            padding:     16px 20px;
+                            font-weight: 600;
+                            border:      none;
+                            &:before {
+                                content:      "\f10c";
+                                margin-right: 10px;
+                                font-size:    10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

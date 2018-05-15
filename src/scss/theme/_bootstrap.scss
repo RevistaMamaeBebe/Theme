@@ -1,0 +1,76 @@
+//** Form control **//
+.form-group {
+
+    font-family: 'Open Sans', cursive;
+
+    label {
+        color:          lighten(color('bg'), 30%);
+        text-transform: uppercase;
+        font-weight:    700;
+        @include rem(font-size, 10px);
+    }
+
+    .form-control {
+        box-shadow: none;
+        color:      lighten(color('bg'), 50%);
+        border: {
+            color: #DEE9EE;
+            width: 2px;
+        }
+        &:hover, &:focus {
+            border-color: #ABC7D5;
+        }
+        @include rem(padding, 13px);
+        @include rem(font-size, 10px);
+
+        &::placeholder,
+        &::-webkit-input-placeholder,
+        &::-moz-placeholder,
+        &:-ms-input-placeholder,
+        &:-moz-placeholder {
+            color: lighten(color('bg'), 40%) !important;
+        }
+
+    }
+
+    textarea {
+        resize: vertical;
+    }
+}
+
+//** Button **//
+.btn {
+    font-family:    'Open Sans', cursive;
+    font-weight:    700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @include text-shadow(0 1px 2px rgba(0, 0, 0, .2));
+    @include rem(padding, 15px 60px);
+    @include rem(font-size, 11px);
+
+    &.btn-round {
+        @include border-radius(40px);
+    }
+
+    &.btn-shadow {
+
+        @each $name, $color in $colors {
+            &.btn-#{$name} {
+                border-color: darken($color, 2%);
+                @include box-shadow(0 24px 46px -16px rgba($color, .9));
+
+                &:hover {
+                    @include box-shadow(0 12px 23px -8px rgba($color, .9));
+                }
+            }
+        }
+
+        &:disabled {
+            cursor:           not-allowed;
+            background-color: #AEB5BF;
+            border-color:     darken(#AEB5BF, 2%);
+            @include box-shadow(0 24px 46px -16px rgba(#AEB5BF, .9) !important);
+        }
+    }
+}
+

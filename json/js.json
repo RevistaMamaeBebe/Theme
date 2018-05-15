@@ -1,0 +1,8 @@
+{
+    "1": "node_modules/jquery/dist/jquery.min.js",
+    "2": "node_modules/popper.js/dist/umd/popper.min.js",
+    "3": "node_modules/bootstrap/dist/js/bootstrap.min.js",
+    "4": "node_modules/owl.carousel/dist/owl.carousel.min.js",
+    "5": "node_modules/jquery-expander/jquery.expander.min.js",
+    "6": "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"
+}

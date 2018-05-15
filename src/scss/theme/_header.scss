@@ -1,0 +1,147 @@
+//** Header **//
+.header {
+    background-color: #FFF;
+    position:         relative;
+    @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
+    &:before {
+        content:  '';
+        position: absolute;
+        width:    100%;
+        height:   16px;
+        display:  block;
+        left:     0;
+        top:      100%;
+        z-index:  2;
+    }
+    .logo {
+        margin:         0;
+        padding:        30px 0;
+        padding-bottom: 40px;
+        text-align:     center;
+        img {
+            height:  60px;
+            display: block;
+            margin:  0 auto;
+            @include transition(all .1s ease-in-out);
+        }
+        .fa {
+            display:          none;
+            margin-top:       30px;
+            background-color: color('default');
+            color:            #FFF;
+            padding:          10px 12px;
+            @include rem(font-size, 24px);
+        }
+    }
+
+    .nav-content {
+        position: relative;
+    }
+
+    .navbar {
+        background-color: color('default');
+        position:         fixed;
+        width:            100%;
+        @include transition(all .3s ease-in-out);
+    }
+
+    .navbar-nav {
+        .nav-link {
+            text-transform: uppercase;
+            color:          #FFF;
+            font: {
+                family: 'Open Sans', cursive;
+                weight: 700;
+            }
+            @include transition(all .3s ease-in-out);
+            &.active,
+            &:active,
+            &:focus,
+            &:hover {
+                color: rgba(#fff, 0.8);
+            }
+            &:after {
+                display: none;
+            }
+            span i {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .user {
+        max-width: 180px;
+        color:     #FFF;
+        font: {
+            family: 'Open Sans', cursive;
+            weight: 700;
+        }
+        i, span {
+            float: left;
+        }
+        i {
+            width:   40px;
+            display: table-cell;
+            @include rem(font-size, 30px);
+        }
+        span {
+            width:        calc(100% - 40px);
+            padding-left: 10px;
+            @include rem(font-size, 10px);
+            a {
+                color:          rgba(#fff, 0.8);
+                text-transform: uppercase;
+                @include rem(font-size, 8px);
+                &:first-child:after {
+                    content:       '';
+                    position:      relative;
+                    border-right:  1px solid rgba(#fff, 0.8);
+                    padding-right: 8px;
+                    margin-right:  5px;
+                    top:           1px;
+                    height:        9px;
+                    display:       inline-block;
+                }
+            }
+        }
+    }
+
+    &.fixed {
+        background-color: transparent;
+        box-shadow:       none;
+        .navbar {
+            position:         fixed;
+            top:              0;
+            left:             0;
+            right:            0;
+            z-index:          20;
+            background-color: rgba(#FFF, 0.9);
+            @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
+        }
+        .navbar-nav {
+            .nav-link {
+                color: lighten(color('bg'), 30%);
+                &.active,
+                &:active,
+                &:focus,
+                &:hover {
+                    color: lighten(color('bg'), 20%);
+                }
+                span {
+                    border-color: lighten(color('bg'), 30%);
+                }
+            }
+        }
+
+        .user {
+            color: lighten(color('bg'), 30%);
+            a {
+                color: lighten(color('bg'), 30%);
+                &:first-child:after {
+                    border-color: lighten(color('bg'), 30%);
+                }
+            }
+        }
+    }
+
+}

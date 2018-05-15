@@ -1,0 +1,21 @@
+.contact {
+    font-family:      'Open Sans', cursive;
+    width:            85%;
+    background-color: #FFF;
+    margin:           120px auto;
+    margin-top:       80px;
+    //padding:          50px 100px;
+    min-height:       300px;
+    //@include box-shadow(0 20px 100px 0 rgba(168, 176, 186, .6));
+
+    h3 {
+        font-weight: 700;
+        color:       #5D6871;
+        @include rem(font-size, 16px);
+    }
+    p {
+        color: #A9B6C5;
+    }
+}
+
+//0 20px 100px 0 rgba(168,176,186,.9)

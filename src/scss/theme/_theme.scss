@@ -1,0 +1,98 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    background: {
+        color:  #FFF;
+        //image:  url('../images/bg/03.png');
+        repeat: repeat;
+    }
+}
+
+.page-content {
+    min-height: 350px;
+    position:   relative;
+}
+
+.title {
+    padding-bottom: 10px;
+    margin-bottom:  10px;
+    font-family:    'Fredoka One', cursive;
+    color:          color('bg');
+    text-transform: uppercase;
+    position:       relative;
+    display:        block;
+    @include rem(font-size, 14px);
+    span {
+        color: color('info');
+    }
+    &:before,
+    &:after {
+        content:          '';
+        position:         absolute;
+        left:             0;
+        right:            0;
+        bottom:           0;
+        height:           5px;
+        background-color: color('light');
+    }
+
+    &:after {
+        width:            30%;
+        background-color: color('info');
+    }
+}
+
+.overlay {
+    width:      100%;
+    height:     100%;
+    background: rgba(#000, 0.3);
+    position:   fixed;
+    top:        0;
+    left:       0;
+    display:    none;
+    z-index:    9998;
+}
+
+.loader {
+    width:            100%;
+    height:           100%;
+    position:         fixed;
+    background-color: #FFF;
+    z-index:          1000;
+
+    &:before {
+        content:          '';
+        width:            50px;
+        height:           50px;
+        position:         absolute;
+        top:              50%;
+        left:             50%;
+        border:           1px solid #DDD;
+        border-top-color: color('info');
+        @include animation(spinner 700ms infinite linear);
+        @include border-radius(50%);
+        @include transform(translate(-50%, -50%));
+    }
+
+}
+
+::selection {
+    background-color: rgba(color('default'), 0.2);
+}
+
+@import "bootstrap";
+@import "animations";
+@import "header";
+@import "sidebar";
+@import "posts";
+@import "widgets";
+@import "footer";
+@import "ads";
+@import "newsletter";
+@import "social";
+@import "pages";
+@import "timeline";
+@import "contact";
+@import "medias";

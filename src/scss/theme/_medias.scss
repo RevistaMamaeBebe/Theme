@@ -1,0 +1,200 @@
+//** Media Max **//
+@media (max-width: 1200px) {
+    html {
+        font-size: 90%;
+    }
+
+    //** Header **//
+    .header {
+        .logo {
+            img {
+                height: 50px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+
+    //** Header **//
+    .header {
+        .logo .fa {
+            display: inline-block;
+        }
+    }
+
+    //** Grid posts **//
+    .grid-posts {
+        article {
+            width:  100% !important;
+            float:  left;
+            height: auto;
+            figure {
+                height: 350px !important;
+            }
+        }
+    }
+
+    //** Posts Category **//
+    .posts-category {
+        display: none;
+    }
+
+    //** Ads **//
+    .ads {
+        display: none;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+//** Media Min **//
+@media (min-width: 992px) {
+
+    //** Header **//
+    .header {
+
+        .navbar {
+            padding: 0;
+        }
+
+        .navbar-nav li {
+            margin: {
+                left:  1rem !important;
+                right: 1rem !important;
+            }
+        }
+
+        .navbar-nav .nav-link {
+            height:      70px;
+            line-height: 70px;
+            padding: {
+                top:    0;
+                bottom: 0;
+                left:   0 !important;
+                right:  0 !important;
+            }
+            @include rem(font-size, 9px);
+        }
+    }
+
+    //** Posts **//
+    .posts {
+        &#main {
+            article {
+                &:nth-child(1) {
+                    .post {
+                        height: 300px;
+                    }
+                    .box-image {
+                        width:  55%;
+                        height: 100%;
+                    }
+                    .content {
+                        width: 45%;
+                    }
+                }
+
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5) {
+                    .post {
+                        height: auto;
+                    }
+
+                    .box-image {
+                        height: 250px;
+                    }
+                }
+
+                &:nth-child(7) {
+                    .box-image {
+                        height: 100%;
+                    }
+                    .content {
+                        position:   absolute;
+                        z-index:    10;
+                        bottom:     0;
+                        left:       0;
+                        right:      0;
+                        color:      #FFF;
+                        background: linear-gradient(to top, #000, transparent);
+                    }
+                    .btn {
+                        display: none;
+                    }
+                    h3 {
+                        @include rem(font-size, 20px);
+                    }
+                    h3,
+                    p {
+                        color: #FFF;
+                    }
+                }
+
+                &:nth-child(7),
+                &:nth-child(8),
+                &:nth-child(9),
+                &:nth-child(10),
+                &:nth-child(11),
+                &:nth-child(12) {
+                    .post {
+                        height: 400px;
+                    }
+                }
+
+                &:nth-child(8),
+                &:nth-child(9),
+                &:nth-child(10),
+                &:nth-child(11),
+                &:nth-child(12) {
+                    .box-image {
+                        height: 200px;
+                    }
+                    h3 {
+                        @include rem(font-size, 9px);
+                    }
+                }
+            }
+        }
+    }
+
+    .posts-category {
+        .posts {
+            article {
+                &:not(:nth-child(1)) {
+                    $h: 90px;
+                    .post {
+                        height: $h;
+                    }
+                    .post-tag {
+                        display: none;
+                    }
+                    .content {
+                        padding-left: $h + 10px;
+                    }
+                    .box-image {
+                        width:    $h;
+                        height:   $h;
+                        position: absolute;
+                        top:      0;
+                        left:     0;
+                    }
+                    h3 {
+                        @include rem(font-size, 9px);
+                    }
+                    p, .btn {
+                        display: none;
+                    }
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+}

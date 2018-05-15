@@ -1,0 +1,44 @@
+$h: 90px;
+
+//** Grid posts **//
+.footer {
+    display:          inline-block;
+    width:            100%;
+    margin-top:       30px;
+    background: {
+        color:  color('info');
+        image:  url('../images/bg/02.png');
+        repeat: repeat;
+    }
+
+    .top {
+        background-color: rgba(#000, 0.1);
+
+        .navbar-nav .nav-link {
+            padding:        20px 25px;
+            text-transform: uppercase;
+            font: {
+                family: 'Open Sans', cursive;
+                weight: 600;
+            }
+            color:          #fff;
+            @include rem(font-size, 9px);
+        }
+
+    }
+
+    img {
+        margin:  40px auto;
+        display: block;
+    }
+
+    .copyright {
+        border-top:     1px solid rgba(#000, 0.1);
+        padding:        20px 0;
+        text-align:     center;
+        color:          #fff;
+        text-transform: uppercase;
+        @include rem(font-size, 10px);
+    }
+
+} 

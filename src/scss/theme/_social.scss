@@ -1,0 +1,51 @@
+$item: 5;
+$icon: 50px;
+$social: (facebook: color('facebook'), twitter: color('twitter'), whatsapp: color('whatsapp'), googlep: color('googlep'), pinterest: color('pinterest'), instagram: color('instagram'));
+
+.social-footer {
+    margin: {
+        top:    40px;
+        bottom: 10px;
+    }
+    display: flex;
+    li {
+        padding: 10px;
+        flex:    1;
+        a {
+            color:           #FFF;
+            text-decoration: none;
+        }
+        i {
+            width:            $icon;
+            height:           $icon;
+            line-height:      $icon;
+            text-align:       center;
+            display:          inline-block;
+            float:            left;
+            background-color: rgba(#000, 0.2);
+            color:            #FFF;
+            margin-right:     10px;
+        }
+        h3 {
+            margin: {
+                top:    5px;
+                bottom: 0;
+            }
+            @include rem('font-size', 11px);
+        }
+        span {
+            overflow:      hidden;
+            white-space:   nowrap;
+            text-overflow: ellipsis;
+            width:         calc(100% - #{$icon} - 10px);
+            display:       inline-block;
+            float:         left;
+            @include rem('font-size', 10px);
+        }
+        @each $name, $color in $social {
+            &.#{$name} {
+                background-color: $color;
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+$social: (facebook: color('facebook'), twitter: color('twitter'), linkedin: color('linkedin'), googlep: color('googlep'), pinterest: color('pinterest'));
+
+//** Widget **//
+.widget {
+    margin-bottom:    10px;
+    padding:          20px;
+    border:           1px solid color('light');
+    background-color: #FFF;
+    .ads {
+        width: 100%;
+    }
+
+    .social {
+        margin: 0;
+        li {
+            display: inline-block;
+            padding: 2px;
+            a {
+                width:           40px;
+                height:          40px;
+                display:         flex;
+                align-items:     center;
+                justify-content: center;
+                border-radius:   4px;
+                color:           color('bg');
+                text-decoration: none;
+                @include transition(all .1s ease-in-out);
+
+                @each $name, $color in $social {
+                    &.#{$name} {
+                        color:            #FFF;
+                        background-color: $color;
+                        &:hover {
+                            background-color: darken($color, 5%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .categories {
+        font-family:   'Open Sans', cursive;
+        margin-bottom: 0;
+        li {
+            margin-bottom: 15px;
+            a {
+                height:          70px;
+                display:         inline-block;
+                color:           #FFF;
+                text-decoration: none;
+                font-weight:     700;
+                position:        relative;
+                @include rem(font-size, 10px);
+                span {
+                    position: absolute;
+                    top:      50%;
+                    left:     20px;
+                    @include transform(translate(0, -50%));
+                }
+                img {
+                    width:  100%;
+                    height: 100%;
+                    @include css3-prefix('object-position', center);
+                    @include css3-prefix('object-fit', cover);
+                    @include transition(all .3s ease-in-out);
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .posts-w {
+        text-transform: uppercase;
+        counter-reset:  count;
+        article {
+            position: relative;
+            &:not(:last-child) {
+                margin-bottom:  30px;
+                padding-bottom: 20px;
+                border-bottom:  1px dashed #EEE;
+            }
+            &:before {
+                counter-increment: count;
+                content:           counter(count);
+                position:          absolute;
+                top:               10px;
+                left:              10px;
+                width:             30px;
+                height:            30px;
+                line-height:       30px;
+                text-align:        center;
+                background-color:  color('info');
+                color:             #FFF;
+                border-radius:     50%;
+
+            }
+
+            .box-image {
+                height: 160px;
+            }
+            h3 {
+                margin-top:    20px;
+                margin-bottom: 0;
+                font-family:   'Open Sans', cursive;
+                font-weight:   700;
+                @include rem(font-size, 10px);
+            }
+            .meta {
+                span {
+                    padding-right: 20px;
+                    color:         color('bg');
+                    font-weight:   700;
+                    @include rem(font-size, 8px);
+                }
+                .date {
+                    color: rgba(color('bg'), 0.5);
+                }
+            }
+        }
+    }
+}

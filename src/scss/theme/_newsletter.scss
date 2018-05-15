@@ -1,0 +1,39 @@
+.newsletter {
+    padding:    40px 35px;
+    border:     5px solid #F5F5F5;
+    text-align: center;
+
+    h2 {
+        color:          color('default');
+        text-transform: uppercase;
+        font-weight:    700;
+        @include rem('font-size', 18px);
+    }
+
+    span {
+        margin: {
+            bottom: 30px;
+            top:    10px;
+        }
+        display:     block;
+        color:       #999;
+        font-weight: 700;
+    }
+
+    .form-control {
+        background-color: #F5F5F5;
+        box-shadow:       none;
+        border:           none;
+        padding:          10px;
+        &:focus {
+            background-color: #EFEFEF;
+        }
+    }
+
+    .btn {
+        text-transform: uppercase;
+        font-weight:    700;
+        padding:        10px;
+        @include rem('font-size', 9px);
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "michel/mmb",
+    "authors": [
+        {
+            "name": "Michel",
+            "email": "michelvieira@outlook.com"
+        }
+    ],
+    "require": {
+        "gregwar/image": "2.*",
+        "intervention/image": "^2.4"
+    }
+}

@@ -1,0 +1,31 @@
+/** ADS **/
+.ads {
+    //background-color: darken(color('light'), 2%);
+    width:       100%;
+    min-height:  300px;
+    position:    relative;
+    font-family: 'Montserrat', cursive;
+    border:      1px solid #F5F5F5;
+    padding:     10px;
+    &:before {
+        content:        'Publicidade';
+        position:       absolute;
+        top:            -7px;
+        left:           9px;
+        text-transform: uppercase;
+        color:          #505561;
+        background:     #FFF;
+        //@include transform(translate(-50%, -50%));
+        @include rem(font-size, 8px);
+    }
+    &.wide {
+        width:      100%;
+        min-height: 110px;
+    }
+
+    .item {
+        background: #FFF;
+        position:   relative;
+        z-index:    10;
+    }
+}
