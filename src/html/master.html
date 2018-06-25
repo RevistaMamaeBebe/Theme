@@ -80,11 +80,28 @@
                                     <span><i class="fa fa-bars" aria-hidden="true"></i> Todas as categorias</span>
                                 </a>
                             </li>
-                            <li class="nav-item"><a class="nav-item nav-link active" href="#">Home</a></li>
-                            <li class="nav-item"><a class="nav-item nav-link" href="#">Revista Online</a></li>
-                            <li class="nav-item"><a class="nav-item nav-link" href="#">Concurso</a></li>
-                            <li class="nav-item"><a class="nav-item nav-link" href="#">Contato</a></li>
-                            <li class="nav-item"><a class="nav-item nav-link search" href="#">
+                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Revista Online</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Concurso</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#">Contato</a>
+                                <ul>
+                                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#">Contato</a>
+                                        <ul>
+                                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Revista Online</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Concurso</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Concurso</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Concurso</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Concurso</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Concurso</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link nav-link search" href="#">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </a></li>
                         </ul>
@@ -92,8 +109,8 @@
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                             <span>Olá, visitante!</span>
                             <span>
-                                <a href="">Cadastre-se</a>
-                                <a href="">Login</a>
+                                <a href="#" data-toggle="modal" data-target="#modal-login" data-event="register">Cadastre-se</a>
+                                <a href="#" data-toggle="modal" data-target="#modal-login" data-event="login">Login</a>
                             </span>
                         </div>
                     </div>
@@ -183,10 +200,107 @@
     </div>
 </footer>
 
+
+<div class="modal fade modal-login" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="right-content"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="left-content" data-tab="">
+                            <div class="register-content item-content">
+                                <div class="description-content d-flex flex-column justify-content-center">
+                                    <span>Cadastre-se</span>
+                                    <h2>Torne-se um membro</h2>
+                                    <p>Informe seus dados abaixo</p>
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="" id="name" placeholder="Nome" autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="" id="email" placeholder="E-mail" autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="" id="senha" placeholder="Senha">
+                                        </div>
+                                        <button type="submit" class="btn btn-info btn-block">Cadastre-se</button>
+                                    </form>
+                                    <div class="or"><span>Ou inscreva-se usando</span></div>
+
+                                    <div class="social-btn d-flex" role="group">
+                                        <button type="submit" class="btn btn-facebook w-100 mr-2">
+                                            <i class="fa fa-facebook"></i> Facebook
+                                        </button>
+                                        <button type="submit" class="btn btn-twitter w-100 mr-2">
+                                            <i class="fa fa-twitter"></i> Twitter
+                                        </button>
+                                        <button type="submit" class="btn btn-googlep w-100">
+                                            <i class="fa fa-google-plus"></i> Google +
+                                        </button>
+                                    </div>
+                                </div>
+                                <footer>
+                                    <p>
+                                        <a href="#" class="pull-right modal-login-tab" data-tab="login">Já tenho minha
+                                            conta</a>
+                                    </p>
+                                </footer>
+                            </div>
+
+                            <div class="login-content item-content">
+                                <div class="description-content d-flex flex-column justify-content-center">
+                                    <span>Login</span>
+                                    <h2>Bem vindo de volta</h2>
+                                    <p>Informe seus dados abaixo</p>
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="" id="email" placeholder="E-mail" autocomplete="off">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="" id="senha" placeholder="Senha">
+                                        </div>
+                                        <div class="mb-3 text-right">
+                                            <a href="#">Esqueci minha senha</a>
+                                        </div>
+                                        <button type="submit" class="btn btn-info btn-block">Login</button>
+                                    </form>
+                                    <div class="or"><span>Ou faça o login usando</span></div>
+
+                                    <div class="social-btn d-flex" role="group">
+                                        <button type="submit" class="btn btn-facebook w-100 mr-2">
+                                            <i class="fa fa-facebook"></i> Facebook
+                                        </button>
+                                        <button type="submit" class="btn btn-twitter w-100 mr-2">
+                                            <i class="fa fa-twitter"></i> Twitter
+                                        </button>
+                                        <button type="submit" class="btn btn-googlep w-100">
+                                            <i class="fa fa-google-plus"></i> Google +
+                                        </button>
+                                    </div>
+                                </div>
+                                <footer>
+                                    <p>
+                                        <a href="#" class="pull-right modal-login-tab" data-tab="register">Ainda não
+                                            tenho minha conta</a>
+                                    </p>
+                                </footer>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a5916949e515c00123e7d93&product=inline-share-buttons"></script>
 <script type="text/javascript" src="../../../build/js/libs.min.js"></script>
 <script type="text/javascript" src="../../../build/js/core.min.js"></script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </body>
 

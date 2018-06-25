@@ -1,7 +1,6 @@
 //** Header **//
 .header {
     background-color: #FFF;
-    position:         relative;
     @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
     &:before {
         content:  '';
@@ -41,6 +40,7 @@
     .navbar {
         background-color: color('default');
         position:         fixed;
+        z-index:          100;
         width:            100%;
         @include transition(all .3s ease-in-out);
     }
@@ -67,6 +67,79 @@
                 margin-right: 10px;
             }
         }
+        .dropdown {
+            > a:before {
+                content:  "\f107";
+                font:     normal normal normal 14px/1 FontAwesome;
+                position: absolute;
+                top:      50%;
+                right:    -15px;
+                @include transform(translate(0, -50%));
+            }
+
+            ul {
+                position:           absolute;
+                top:                100%;
+                left:               0;
+                padding:            15px 0;
+                list-style:         none;
+                min-width:          200px;
+                text-align:         left;
+                visibility:         hidden;
+                opacity:            0;
+                margin-top:         20px;
+                -webkit-transition: all .2s ease;
+                transition:         all .2s ease;
+                background-color:   #FFF;
+                @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
+                li {
+                    position:      relative;
+                    margin:        0 !important;
+                    padding-left:  1.5rem;
+                    padding-right: 1.5rem;
+                    a {
+                        height:      40px;
+                        line-height: 40px;
+                        color:       lighten(color('bg'), 30%) !important;
+                        &:before {
+                            right: 15px;
+                        }
+                        &:hover {
+                            color: color(default) !important;
+                        }
+                    }
+                }
+                & > li ul {
+                    left:       100%;
+                    top:        0;
+                    margin-top: 10px;
+                }
+            }
+
+            &.last-elements ul {
+                left:  auto;
+                right: 0;
+            }
+            &.last-elements ul > li.dropdown ul {
+                left:         auto;
+                right:        100%;
+                margin-left:  0;
+                margin-right: 10px;
+            }
+
+            &:hover > ul {
+                visibility: visible;
+                opacity:    1;
+                margin-top: 0;
+            }
+
+            &:hover > ul > li:hover > ul {
+                visibility:   visible;
+                opacity:      1;
+                margin-top:   -1px;
+                margin-right: 0;
+            }
+        }
     }
 
     .user {
@@ -85,10 +158,14 @@
             @include rem(font-size, 30px);
         }
         span {
-            width:        calc(100% - 40px);
-            padding-left: 10px;
+            width:         calc(100% - 40px);
+            padding-left:  10px;
+            overflow:      hidden;
+            white-space:   nowrap;
+            text-overflow: ellipsis;
             @include rem(font-size, 10px);
             a {
+                outline:        none;
                 color:          rgba(#fff, 0.8);
                 text-transform: uppercase;
                 @include rem(font-size, 8px);
@@ -115,7 +192,7 @@
             left:             0;
             right:            0;
             z-index:          20;
-            background-color: rgba(#FFF, 0.9);
+            background-color: rgba(#FFF, 1);
             @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
         }
         .navbar-nav {

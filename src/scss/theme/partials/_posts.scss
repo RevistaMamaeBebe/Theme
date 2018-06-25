@@ -1,3 +1,11 @@
+img.no-image {
+    background-image:    url('../images/no-photo.png');
+    background-position: center center;
+    background-repeat:   no-repeat;
+    background-size:     contain;
+    text-indent:         -10000px;
+}
+
 //** Grid posts **//
 .grid-posts {
     $h: 400px;
@@ -38,18 +46,17 @@
             padding:     20px;
             padding-top: 30px;
             z-index:     2;
-
         }
 
-        h4 {
-            font-family: 'Open Sans', cursive;
+        h3 {
+            font-family: 'Poppins', cursive;
             font-weight: 700;
             @include rem(font-size, 10px);
             @include rem(line-height, 1.5);
         }
 
         a {
-            color:           #FFF;
+            color:           #FFF !important;
             text-decoration: none;
         }
 
@@ -129,7 +136,7 @@
         }
 
         h3 {
-            font-family:    'Open Sans', cursive;
+            font-family:    'Poppins', cursive;
             color:          lighten(color('bg'), 10%);
             text-transform: uppercase;
             overflow:       hidden;
@@ -137,12 +144,17 @@
             text-overflow:  ellipsis;
             font-weight:    700;
             @include rem(font-size, 11px);
+            a {
+                color:           lighten(color('bg'), 10%);
+                text-decoration: none;
+            }
         }
 
         p {
-            color:    darken(color('light'), 30%);
-            overflow: hidden;
-            @include rem(font-size, 10.5px);
+            font-family: 'Open Sans', cursive;
+            color:       darken(color('light'), 30%);
+            overflow:    hidden;
+            @include rem(font-size, 10px);
         }
 
         .meta {
@@ -232,26 +244,119 @@
     }
 }
 
-.post-tag {
-    @include rem(font-size, 9px);
-    display:       block;
-    margin-bottom: 10px;
-    a {
-        color:           lighten(color('bg'), 10%);
-        display:         inline-block;
-        font-weight:     700;
-        text-transform:  uppercase;
-        text-decoration: none !important;
-        &:after {
-            content:          '';
-            width:            100%;
-            height:           5px;
-            margin-top:       -6px;
-            display:          block;
-            background-color: color('default');
+.post-categories {
+    span {
+        @include rem(font-size, 9px);
+        display: inline-block;
+        margin: {
+            bottom: 10px;
+            right:  5px;
+        }
+
+        a {
+            color:           lighten(color('bg'), 10%);
+            display:         inline-block;
+            font-weight:     700;
+            text-transform:  uppercase;
+            text-decoration: none !important;
+            &:after {
+                content:          '';
+                width:            100%;
+                height:           5px;
+                margin-top:       -6px;
+                display:          block;
+                background-color: color('default');
+            }
         }
     }
+}
 
+.post-tags {
+    span {
+        @include rem(font-size, 8px);
+        display: inline-block;
+        margin: {
+            bottom: 10px;
+            right:  5px;
+        }
+        a {
+            color:           color('bg');
+            display:         inline-block;
+            font-weight:     700;
+            text-transform:  uppercase;
+            text-decoration: none !important;
+            border:          1px solid lighten(color('bg'), 30%);
+            padding:         7px 10px;
+            @include transition(all .3s ease-in-out);
+            &:hover {
+                color:            #FFF;
+                background-color: color('default');
+                border-color:     color('default');
+            }
+        }
+    }
+}
+
+.post-nav {
+    $margin: 35px;
+    position: relative;
+    margin:   30px 0;
+    display:  inline-block;
+    width:    100%;
+    .item {
+        width:           40%;
+        display:         inline-block;
+        margin-left:     $margin;
+        text-decoration: none;
+        color:           color('bg');
+        span {
+            background-color: lighten(color('bg'), 65%);
+            padding:          0 12px;
+            height:           $margin;
+            line-height:      $margin;
+            display:          block;
+            text-transform:   uppercase;
+            @include rem(font-size, 10px);
+        }
+
+        p {
+            padding:    15px;
+            margin:     0;
+            border:     1px solid #EEE;
+            border-top: 0;
+            @include rem(font-size, 10px);
+        }
+
+        &:before {
+            font:        normal normal normal 14px/1 FontAwesome;
+            content:     "\f104";
+            text-align:  center;
+            width:       $margin;
+            height:      $margin;
+            line-height: $margin - 2;
+            border:      1px solid #EEE;
+            display:     inline-block;
+            position:    absolute;
+            left:        0;
+            top:         0;
+        }
+
+        &:last-child {
+            margin-left:  0;
+            margin-right: $margin;
+            &:before {
+                content: "\f105";
+                left:    auto;
+                right:   0;
+            }
+        }
+
+        &:hover {
+            p {
+                color: color('info');
+            }
+        }
+    }
 }
 
 .box-image {
@@ -266,40 +371,6 @@
         @include css3-prefix('object-fit', cover);
         @include transition(all .3s ease-in-out);
     }
-
-    &:before {
-        content:          '';
-        position:         absolute;
-        top:              0;
-        left:             0;
-        width:            100%;
-        height:           100%;
-        background-color: rgba(#000, 0.2);
-        z-index:          2;
-        @include transition(all .3s ease-in-out);
-    }
 }
 
-.post-content {
-    .post-text {
-        margin:      30px 0;
-        font-family: 'Open Sans', cursive;
-        p {
-            text-align:  justify;
-            color:       #555;
-            line-height: 2;
-            @include rem(font-size, 10px);
-        }
-        img {
-            max-width: 100%;
-        }
-
-        blockquote {
-            background-color: #EDEDED;
-            padding:          20px;
-            font-style:       italic;
-            border-left:      8px solid color('info');
-        }
-    }
-}
 

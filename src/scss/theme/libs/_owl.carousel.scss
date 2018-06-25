@@ -1,0 +1,27 @@
+.owl-carousel {
+    margin-bottom: 20px;
+    .owl-nav {
+        transition: 300ms;
+        position:   initial;
+
+        .owl-prev, .owl-next {
+            outline:          none;
+            width:            45px;
+            height:           45px;
+            position:         absolute;
+            top:              50%;
+            left:             15px;
+            font-size:        20px !important;
+            color:            #FFF !important;
+            background-color: color('bg') !important;
+            @include border-radius(50%);
+            @include transform(translate(0, -50%))
+        }
+
+        .owl-next {
+            right: 15px;
+            left:  auto;
+        }
+    }
+
+}

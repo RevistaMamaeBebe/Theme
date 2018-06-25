@@ -18,12 +18,12 @@ body {
 .title {
     padding-bottom: 10px;
     margin-bottom:  10px;
-    font-family:    'Fredoka One', cursive;
+    font-family:    'Poppins', cursive;
     color:          color('bg');
     text-transform: uppercase;
     position:       relative;
     display:        block;
-    @include rem(font-size, 14px);
+    @include rem(font-size, 12px);
     span {
         color: color('info');
     }
@@ -79,20 +79,27 @@ body {
 }
 
 ::selection {
-    background-color: rgba(color('default'), 0.2);
+    background-color: rgba(color('default'), 1);
+    color:            #FFF;
 }
 
-@import "bootstrap";
-@import "animations";
-@import "header";
-@import "sidebar";
-@import "posts";
-@import "widgets";
-@import "footer";
-@import "ads";
-@import "newsletter";
-@import "social";
-@import "pages";
-@import "timeline";
-@import "contact";
-@import "medias";
+//** Plugins **//
+@import "libs/bootstrap";
+@import "libs/owl.carousel";
+
+//** Theme **//
+@import "partials/fonts";
+@import "partials/animations";
+@import "partials/header";
+@import "partials/sidebar";
+@import "partials/posts";
+@import "partials/widgets";
+@import "partials/footer";
+@import "partials/ads";
+@import "partials/newsletter";
+@import "partials/social";
+@import "partials/pages";
+@import "partials/timeline";
+@import "partials/contact";
+@import "partials/login";
+@import "partials/medias";

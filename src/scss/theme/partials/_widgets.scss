@@ -40,12 +40,13 @@ $social: (facebook: color('facebook'), twitter: color('twitter'), linkedin: colo
     }
 
     .categories {
-        font-family:   'Open Sans', cursive;
+        font-family:   'Poppins', cursive;
         margin-bottom: 0;
         li {
             margin-bottom: 15px;
             a {
                 height:          70px;
+                width:           100%;
                 display:         inline-block;
                 color:           #FFF;
                 text-decoration: none;
@@ -54,9 +55,10 @@ $social: (facebook: color('facebook'), twitter: color('twitter'), linkedin: colo
                 @include rem(font-size, 10px);
                 span {
                     position: absolute;
-                    top:      50%;
-                    left:     20px;
-                    @include transform(translate(0, -50%));
+                    bottom:   0;
+                    left:     0;
+                    padding:  5px 10px;
+                    background-color: color(info);
                 }
                 img {
                     width:  100%;
@@ -72,53 +74,47 @@ $social: (facebook: color('facebook'), twitter: color('twitter'), linkedin: colo
         }
     }
 
-    .posts-w {
-        text-transform: uppercase;
-        counter-reset:  count;
-        article {
-            position: relative;
-            &:not(:last-child) {
-                margin-bottom:  30px;
-                padding-bottom: 20px;
-                border-bottom:  1px dashed #EEE;
-            }
-            &:before {
-                counter-increment: count;
-                content:           counter(count);
-                position:          absolute;
-                top:               10px;
-                left:              10px;
-                width:             30px;
-                height:            30px;
-                line-height:       30px;
-                text-align:        center;
-                background-color:  color('info');
-                color:             #FFF;
-                border-radius:     50%;
-
-            }
-
-            .box-image {
-                height: 160px;
-            }
-            h3 {
-                margin-top:    20px;
+    .posts-list {
+        margin:      0;
+        li {
+            display:       inline-block;
+            width:         100%;
+            margin-bottom: 20px;
+            &:last-child {
                 margin-bottom: 0;
-                font-family:   'Open Sans', cursive;
-                font-weight:   700;
-                @include rem(font-size, 10px);
             }
-            .meta {
-                span {
-                    padding-right: 20px;
-                    color:         color('bg');
-                    font-weight:   700;
-                    @include rem(font-size, 8px);
-                }
-                .date {
-                    color: rgba(color('bg'), 0.5);
+        }
+        figure {
+            margin:       0;
+            margin-right: 15px;
+            width:        70px;
+            height:       70px;
+            float:        left;
+            @include border-radius(50%);
+        }
+        h3 {
+            font-family: 'Poppins', cursive;
+            margin: {
+                top:    8px;
+                bottom: 0;
+            }
+            text-transform: uppercase;
+            font-weight:    700;
+            @include rem(line-height, 12px);
+            @include rem(font-size, 9px);
+            a {
+                color:           lighten(color('bg'), 20%);
+                text-decoration: none;
+                @include transition(all .3s ease-in-out);
+                &:hover {
+                    color: color('bg');
                 }
             }
+        }
+        span {
+            text-transform: uppercase;
+            color:          lighten(color('bg'), 35%);
+            @include rem(font-size, 8px);
         }
     }
 }

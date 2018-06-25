@@ -12,24 +12,17 @@
 
     .form-control {
         box-shadow: none;
-        color:      lighten(color('bg'), 50%);
+        color:      lighten(color('bg'), 40%);
         border: {
             color: #DEE9EE;
-            width: 2px;
+            width: 1px;
         }
         &:hover, &:focus {
             border-color: #ABC7D5;
         }
-        @include rem(padding, 13px);
+        @include placeholder( lighten(color('bg'), 50%));
+        @include rem(padding, 12px 15px);
         @include rem(font-size, 10px);
-
-        &::placeholder,
-        &::-webkit-input-placeholder,
-        &::-moz-placeholder,
-        &:-ms-input-placeholder,
-        &:-moz-placeholder {
-            color: lighten(color('bg'), 40%) !important;
-        }
 
     }
 
@@ -72,5 +65,50 @@
             @include box-shadow(0 24px 46px -16px rgba(#AEB5BF, .9) !important);
         }
     }
+}
+
+//** Pagination **//
+.pagination {
+    .page-item {
+        margin: 5px;
+        .page-link {
+            color:        #333;
+            border-color: #F1F1F1;
+            padding:      10px;
+            min-width:    38px;
+            text-align:   center;
+            @include rem(font-size, 10px);
+            @include transition(all .3s ease-in-out);
+            &:hover {
+                background-color: color('info');
+                border-color:     color('info');
+                color:            #FFF;
+            }
+        }
+        &.active span {
+            @extend .page-link:hover;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+//** Modal **//
+.modal-backdrop {
+    background: color('bg');
+    &.show {
+        @include opacity(0.8);
+    }
+}
+
+.modal-content {
+    border:   none;
+    overflow: hidden;
+    @include border-radius(5px);
+    @include box-shadow(0px 10px 30px darken(color('bg'), 0%));
 }
 

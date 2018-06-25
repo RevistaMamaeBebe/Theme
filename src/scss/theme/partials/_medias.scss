@@ -82,6 +82,12 @@
     }
 
     //** Posts **//
+    .grid-posts{
+        article .caption{
+            background: linear-gradient(to top, rgba(#000, 0.5), transparent);
+        }
+    }
+
     .posts {
         &#main {
             article {
@@ -121,10 +127,16 @@
                         left:       0;
                         right:      0;
                         color:      #FFF;
-                        background: linear-gradient(to top, #000, transparent);
+                        background: linear-gradient(to top, rgba(#000, 0.5), transparent);
+                    }
+                    .meta span {
+                        color: #F1F1F1;
                     }
                     .btn {
                         display: none;
+                    }
+                    a {
+                        color: #FFF;
                     }
                     h3 {
                         @include rem(font-size, 20px);
@@ -170,7 +182,8 @@
                     .post {
                         height: $h;
                     }
-                    .post-tag {
+                    .post-categories,
+                    .post-tags{
                         display: none;
                     }
                     .content {
