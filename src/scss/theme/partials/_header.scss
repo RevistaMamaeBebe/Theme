@@ -2,221 +2,164 @@
 .header {
     background-color: #FFF;
     @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
-    &:before {
-        content:  '';
-        position: absolute;
-        width:    100%;
-        height:   16px;
-        display:  block;
-        left:     0;
-        top:      100%;
-        z-index:  2;
-    }
-    .logo {
-        margin:         0;
-        padding:        30px 0;
-        padding-bottom: 40px;
-        text-align:     center;
-        img {
-            height:  60px;
-            display: block;
-            margin:  0 auto;
-            @include transition(all .1s ease-in-out);
-        }
-        .fa {
-            display:          none;
-            margin-top:       30px;
-            background-color: color('default');
-            color:            #FFF;
-            padding:          10px 12px;
-            @include rem(font-size, 24px);
-        }
-    }
 
-    .nav-content {
-        position: relative;
-    }
-
-    .navbar {
+    .header-top {
+        min-height:       60px;
+        border-bottom:    1px solid darken(color('default'), 2%);
         background-color: color('default');
-        position:         fixed;
-        z-index:          100;
-        width:            100%;
-        @include transition(all .3s ease-in-out);
-    }
-
-    .navbar-nav {
-        .nav-link {
-            text-transform: uppercase;
-            color:          #FFF;
-            font: {
-                family: 'Open Sans', cursive;
-                weight: 700;
+        display:          flex;
+        align-items:      center;
+        justify-content:  center;
+        a {
+            display: inline-block;
+            color:   rgba(#FFF, 0.8);
+            padding: 5px 10px;
+            @include rem('font-size', 8px);
+            i {
+                @include rem('font-size', 12px);
             }
-            @include transition(all .3s ease-in-out);
-            &.active,
-            &:active,
-            &:focus,
             &:hover {
-                color: rgba(#fff, 0.8);
-            }
-            &:after {
-                display: none;
-            }
-            span i {
-                margin-right: 10px;
-            }
-        }
-        .dropdown {
-            > a:before {
-                content:  "\f107";
-                font:     normal normal normal 14px/1 FontAwesome;
-                position: absolute;
-                top:      50%;
-                right:    -15px;
-                @include transform(translate(0, -50%));
-            }
-
-            ul {
-                position:           absolute;
-                top:                100%;
-                left:               0;
-                padding:            15px 0;
-                list-style:         none;
-                min-width:          200px;
-                text-align:         left;
-                visibility:         hidden;
-                opacity:            0;
-                margin-top:         20px;
-                -webkit-transition: all .2s ease;
-                transition:         all .2s ease;
-                background-color:   #FFF;
-                @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
-                li {
-                    position:      relative;
-                    margin:        0 !important;
-                    padding-left:  1.5rem;
-                    padding-right: 1.5rem;
-                    a {
-                        height:      40px;
-                        line-height: 40px;
-                        color:       lighten(color('bg'), 30%) !important;
-                        &:before {
-                            right: 15px;
-                        }
-                        &:hover {
-                            color: color(default) !important;
-                        }
-                    }
-                }
-                & > li ul {
-                    left:       100%;
-                    top:        0;
-                    margin-top: 10px;
-                }
-            }
-
-            &.last-elements ul {
-                left:  auto;
-                right: 0;
-            }
-            &.last-elements ul > li.dropdown ul {
-                left:         auto;
-                right:        100%;
-                margin-left:  0;
-                margin-right: 10px;
-            }
-
-            &:hover > ul {
-                visibility: visible;
-                opacity:    1;
-                margin-top: 0;
-            }
-
-            &:hover > ul > li:hover > ul {
-                visibility:   visible;
-                opacity:      1;
-                margin-top:   -1px;
-                margin-right: 0;
+                color: #FFF;
             }
         }
     }
 
-    .user {
-        max-width: 180px;
-        color:     #FFF;
+    .header-top a,
+    .navbar-nav .nav-link {
+        text-transform: uppercase;
         font: {
             family: 'Open Sans', cursive;
             weight: 700;
         }
-        i, span {
-            float: left;
+        @include transition(all .3s ease-in-out);
+    }
+
+    .header-content {
+        background-color: #FFF;
+        display:          flex;
+        min-height:       130px;
+        align-items:      center;
+        position:         relative;
+        z-index:          999;
+        @include transition(all .2s ease-in-out);
+        img {
+            @include transition(all .2s ease-in-out);
         }
-        i {
-            width:   40px;
-            display: table-cell;
-            @include rem(font-size, 30px);
+
+        //** Navbar **//
+        .nav-content {
+            position: relative;
         }
-        span {
-            width:         calc(100% - 40px);
-            padding-left:  10px;
-            overflow:      hidden;
-            white-space:   nowrap;
-            text-overflow: ellipsis;
-            @include rem(font-size, 10px);
-            a {
-                outline:        none;
-                color:          rgba(#fff, 0.8);
-                text-transform: uppercase;
-                @include rem(font-size, 8px);
-                &:first-child:after {
-                    content:       '';
-                    position:      relative;
-                    border-right:  1px solid rgba(#fff, 0.8);
-                    padding-right: 8px;
-                    margin-right:  5px;
-                    top:           1px;
-                    height:        9px;
-                    display:       inline-block;
+
+        .navbar-brand {
+            margin:        0;
+            margin-bottom: 15px;
+            padding:       0 15px;
+        }
+
+        .navbar {
+            width: 100%;
+            @include transition(all .3s ease-in-out);
+        }
+
+        .navbar-nav {
+            .nav-link {
+                &.active,
+                &:active,
+                &:focus,
+                &:hover {
+                    color: color('info') !important;
+                }
+                &:after {
+                    display: none;
+                }
+                span i {
+                    margin-right: 10px;
+                }
+            }
+            .dropdown {
+                > a:before {
+                    content:  "\f107";
+                    font:     normal normal normal 14px/1 FontAwesome;
+                    position: absolute;
+                    top:      50%;
+                    right:    -15px;
+                    @include transform(translate(0, -50%));
+                }
+
+                ul {
+                    position:           absolute;
+                    top:                100%;
+                    left:               0;
+                    padding:            15px 0;
+                    list-style:         none;
+                    min-width:          200px;
+                    text-align:         left;
+                    visibility:         hidden;
+                    opacity:            0;
+                    margin-top:         50px;
+                    -webkit-transition: all .2s ease;
+                    transition:         all .2s ease;
+                    background-color:   #FFF;
+                    @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
+                    li {
+                        position:      relative;
+                        margin:        0 !important;
+                        padding-left:  1.5rem;
+                        padding-right: 1.5rem;
+                        a {
+                            height:      40px;
+                            line-height: 40px;
+                            color:       lighten(color('bg'), 30%) !important;
+                            &:before {
+                                right: 15px;
+                            }
+                        }
+                    }
+                    & > li ul {
+                        left:       100%;
+                        top:        0;
+                        margin-top: 10px;
+                    }
+                }
+
+                &.last-elements ul {
+                    left:  auto;
+                    right: 0;
+                }
+                &.last-elements ul > li.dropdown ul {
+                    left:         auto;
+                    right:        100%;
+                    margin-left:  0;
+                    margin-right: 10px;
+                }
+
+                &:hover > ul {
+                    visibility: visible;
+                    opacity:    1;
+                    margin-top: 0;
+                }
+
+                &:hover > ul > li:hover > ul {
+                    visibility:   visible;
+                    opacity:      1;
+                    margin-top:   -1px;
+                    margin-right: 0;
                 }
             }
         }
     }
 
     &.fixed {
-        background-color: transparent;
-        box-shadow:       none;
-        .navbar {
-            position:         fixed;
-            top:              0;
-            left:             0;
-            right:            0;
-            z-index:          20;
-            background-color: rgba(#FFF, 1);
-            @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
-        }
-        .navbar-nav {
-            .nav-link {
-                color: lighten(color('bg'), 30%);
-                &.active,
-                &:active,
-                &:focus,
-                &:hover {
-                    color: lighten(color('bg'), 20%);
-                }
-                span {
-                    border-color: lighten(color('bg'), 30%);
-                }
-            }
-        }
-
-        .user {
-            color: lighten(color('bg'), 30%);
-            a {
-                color: lighten(color('bg'), 30%);
-                &:first-child:after {
-                    border-color: lighten(color('bg'), 30%);
-                }
+        height: 170px;
+        .header-content {
+            position:   fixed;
+            width:      100%;
+            top:        0;
+            min-height: 85px;
+            @extend .header;
+            img {
+                height: 40px;
             }
         }
     }

@@ -22,7 +22,7 @@ $h: 90px;
                 weight: 600;
             }
             color:          #fff;
-            @include rem(font-size, 9px);
+            @include rem('font-size', 9px);
         }
 
     }
@@ -38,7 +38,7 @@ $h: 90px;
         text-align:     center;
         color:          #fff;
         text-transform: uppercase;
-        @include rem(font-size, 10px);
+        @include rem('font-size', 10px);
     }
 
 } 

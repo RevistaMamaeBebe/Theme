@@ -6,6 +6,61 @@ img.no-image {
     text-indent:         -10000px;
 }
 
+.top-posts,
+.posts {
+    .meta {
+        text-transform: uppercase;
+        margin-bottom:  5px;
+        span {
+            padding-right: 10px;
+            color:         color('bg');
+            @include rem('font-size', 9px);
+        }
+        .date {
+            color: rgba(color('bg'), 0.5);
+        }
+    }
+    h3 {
+        font-family:    'Poppins', cursive;
+        color:          lighten(color('bg'), 30%);
+        text-transform: uppercase;
+        overflow:       hidden;
+        white-space:    nowrap;
+        text-overflow:  ellipsis;
+        font-weight:    700;
+        @include rem('font-size', 11px);
+        a {
+            color:           lighten(color('bg'), 10%);
+            text-decoration: none;
+        }
+    }
+}
+
+//** Top posts **//
+.top-posts {
+    padding:          25px 0;
+    background-color: rgba(#FBFBFB, 0.5);
+    border-bottom:    1px solid #F5F5F5;
+    border-top:       1px solid #F5F5F5;
+    .figure {
+        width:  85px;
+        height: 85px;
+        float:  left;
+        @include border-radius(50%);
+    }
+    .details {
+        width:   calc(100% - 85px);
+        float:   left;
+        padding: 10px;
+    }
+    h3 {
+        overflow:      visible;
+        white-space:   normal;
+        text-overflow: initial;
+        @include rem('font-size', 9px);
+    }
+}
+
 //** Grid posts **//
 .grid-posts {
     $h: 400px;
@@ -51,8 +106,8 @@ img.no-image {
         h3 {
             font-family: 'Poppins', cursive;
             font-weight: 700;
-            @include rem(font-size, 10px);
-            @include rem(line-height, 1.5);
+            @include rem('font-size', 10px);
+            @include rem('line-height', 1.5);
         }
 
         a {
@@ -61,10 +116,11 @@ img.no-image {
         }
 
         .meta {
+            margin-bottom: 5px;
             span {
                 padding-right: 10px;
                 color:         #FFF;
-                @include rem(font-size, 9px);
+                @include rem('font-size', 9px);
             }
             .date {
                 color: rgba(#fff, 0.5);
@@ -83,7 +139,7 @@ img.no-image {
                 height: $h + $p;
             }
             h4 {
-                @include rem(font-size, 14px);
+                @include rem('font-size', 14px);
             }
         }
 
@@ -135,38 +191,11 @@ img.no-image {
             height: 250px;
         }
 
-        h3 {
-            font-family:    'Poppins', cursive;
-            color:          lighten(color('bg'), 10%);
-            text-transform: uppercase;
-            overflow:       hidden;
-            white-space:    nowrap;
-            text-overflow:  ellipsis;
-            font-weight:    700;
-            @include rem(font-size, 11px);
-            a {
-                color:           lighten(color('bg'), 10%);
-                text-decoration: none;
-            }
-        }
-
         p {
             font-family: 'Open Sans', cursive;
             color:       darken(color('light'), 30%);
             overflow:    hidden;
             @include rem(font-size, 10px);
-        }
-
-        .meta {
-            text-transform: uppercase;
-            span {
-                padding-right: 10px;
-                color:         color('bg');
-                @include rem(font-size, 9px);
-            }
-            .date {
-                color: rgba(color('bg'), 0.5);
-            }
         }
 
         .btn {
@@ -175,7 +204,7 @@ img.no-image {
             font: {
                 weight: 700;
             }
-            @include rem(font-size, 8px);
+            @include rem('font-size', 8px);
         }
 
         .social {
@@ -273,7 +302,7 @@ img.no-image {
 
 .post-tags {
     span {
-        @include rem(font-size, 8px);
+        @include rem('font-size', 8px);
         display: inline-block;
         margin: {
             bottom: 10px;
@@ -316,7 +345,7 @@ img.no-image {
             line-height:      $margin;
             display:          block;
             text-transform:   uppercase;
-            @include rem(font-size, 10px);
+            @include rem('font-size', 10px);
         }
 
         p {
@@ -324,7 +353,7 @@ img.no-image {
             margin:     0;
             border:     1px solid #EEE;
             border-top: 0;
-            @include rem(font-size, 10px);
+            @include rem('font-size', 10px);
         }
 
         &:before {

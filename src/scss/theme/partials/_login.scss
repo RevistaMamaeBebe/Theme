@@ -54,7 +54,7 @@
             text-transform: uppercase;
             font-weight:    700;
             color:          #B9BFC8;
-            @include rem(font-size, 8px);
+            @include rem('font-size', 8px);
         }
         h2 {
             margin: {
@@ -64,7 +64,7 @@
             font-weight:    100;
             text-transform: uppercase;
             color:          #3C3C3C;
-            @include rem(font-size, 20px);
+            @include rem('font-size', 20px);
             b {
                 font-weight: 700;
             }
@@ -74,11 +74,11 @@
             font-weight:    400;
             color:          #B9BFC8;
             margin-bottom:  30px;
-            @include rem(font-size, 9px);
+            @include rem('font-size', 9px);
         }
         .btn {
             padding: 15px 8px;
-            @include rem(font-size, 9px);
+            @include rem('font-size', 9px);
         }
 
         .or {

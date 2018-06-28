@@ -15,7 +15,6 @@
         $self.navContent.css('min-height', $self.navBar.innerHeight());
 
         $(window).on('scroll resize', function () {
-
             if ($(window).scrollTop() > ($self.navBar.innerHeight())) {
                 $self.header.addClass('fixed');
             } else {
@@ -27,7 +26,7 @@
     }
 
     App.prototype.initNavBar = function () {
-        $self.navBar.find('.navbar-nav > li').slice(-1).addClass('last-elements');
+        $self.navBar.filter('#nav-top').find('.navbar-nav > li.dropdown').slice(-1).addClass('last-elements');
     }
 
     App.prototype.initSideBar = function () {

@@ -65,7 +65,7 @@ $color: (1: #FDAE49, 2: #F5937A, 3: #BC7C7A, 4: #46ACBB, 5: #47A5D9, 6: #9FC150,
                 p {
                     color:  #8C8C8C;
                     margin: 0;
-                    @include rem(font-size, 10px);
+                    @include rem('font-size', 10px);
                 }
                 &:before {
                     content:          '';

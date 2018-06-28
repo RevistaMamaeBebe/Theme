@@ -29,7 +29,7 @@
         font-family:    'Poppins', cursive;
         text-transform: uppercase;
         font-weight:    700;
-        @include rem(font-size, 30px);
+        @include rem('font-size', 30px);
     }
 }
 
@@ -40,7 +40,7 @@
         text-transform: uppercase;
         font-family:    'Poppins', cursive;
         color:          lighten(color('bg'), 10%);
-        @include rem(font-size, 14px);
+        @include rem('font-size', 14px);
     }
 
     .meta {
@@ -48,7 +48,7 @@
         span {
             padding-right: 10px;
             color:         color('bg');
-            @include rem(font-size, 9px);
+            @include rem('font-size', 9px);
         }
         .date {
             color: rgba(color('bg'), 0.5);
@@ -64,7 +64,7 @@
             text-align:  justify;
             color:       #555;
             line-height: 2;
-            @include rem(font-size, 10px);
+            @include rem('font-size', 10px);
         }
         img {
             max-width:  100%;
@@ -83,27 +83,3 @@
     }
 }
 
-.cm-breadcrumb {
-    background-color: color('light');
-    padding:          30px 0;
-    font-family:      'Open Sans', cursive;
-    .breadcrumb {
-        background-color: transparent;
-        margin:           0;
-        padding:          0;
-        justify-content:  flex-end;
-        li {
-            text-transform: uppercase;
-            font-weight:    700;
-            @include rem(font-size, 9px);
-            a {
-                color: color('info');
-            }
-            & + ::before {
-                content:  "::";
-                position: relative;
-                top:      -1.5px;
-            }
-        }
-    }
-}

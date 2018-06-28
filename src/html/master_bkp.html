@@ -67,62 +67,22 @@
 <div class="main-content">
 
     <header class="header">
-        <div class="header-top">
-            <div class="container">
-                <ul class="nav pull-left">
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-link" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-link" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-                <ul class="nav justify-content-end pull-right">
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-link" href="#">Cadastre-se</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-link" href="#">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <div class="header-top"></div>
 
-        <div class="header-content">
-            <div id="app" class="container">
-                <nav class="navbar navbar-expand-lg navbar-light" id="nav-top">
-                    <div id="navbarNavDropdown" class="navbar-collapse collapse">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
+        <div class="nav-content">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav m-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Minha conta</a>
+                                <a class="nav-link sidebar-collapse" href="#">
+                                    <span><i class="fa fa-bars" aria-hidden="true"></i> Todas as categorias</span>
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
-                        </ul>
-                        <a class="navbar-brand" href="#">
-                            <div class="logo">
-                                <div class="container">
-                                    <img src="../../../build/images/logo.png" height="50">
-                                </div>
-                            </div>
-                        </a>
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Revista Online</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Concurso</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#">Contato</a>
                                 <ul>
@@ -141,64 +101,31 @@
                                     <li class="nav-item"><a class="nav-link" href="#">Concurso</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/register') }}">Register</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link nav-link search" href="#">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </a></li>
                         </ul>
+                        <div href class="user">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            <span>Olá, visitante!</span>
+                            <span>
+                                <a href="#" data-toggle="modal" data-target="#modal-login" data-event="register">Cadastre-se</a>
+                                <a href="#" data-toggle="modal" data-target="#modal-login" data-event="login">Login</a>
+                            </span>
+                        </div>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </nav>
         </div>
-    </header>
 
-    <div class="top-posts">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="item">
-                        <div class="box-image figure">
-                            <img src="http://mamaebebe.l.com/storage/images/2018/04/teste-da-linguinha.png" class="no-image">
-                        </div>
-                        <div class="details">
-                            <h3><a href="http://mamaebebe.l.com/irritacao-e-bolhas-na-pele-do-bebe">Irritação e bolhas
-                                na pele do bebê</a></h3>
-                            <div class="meta">
-                                <span class="date"><i class="fa fa-clock-o"></i> 18 de junho de 2018</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="item">
-                        <div class="box-image figure">
-                            <img src="http://mamaebebe.l.com/storage/images/2018/04/teste-da-linguinha.png" class="no-image">
-                        </div>
-                        <div class="details">
-                            <h3><a href="http://mamaebebe.l.com/irritacao-e-bolhas-na-pele-do-bebe">Irritação e bolhas
-                                na pele do bebê</a></h3>
-                            <div class="meta">
-                                <span class="date"><i class="fa fa-clock-o"></i> 18 de junho de 2018</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="item">
-                        <div class="box-image figure">
-                            <img src="http://mamaebebe.l.com/storage/images/2018/04/teste-da-linguinha.png" class="no-image">
-                        </div>
-                        <div class="details">
-                            <h3><a href="http://mamaebebe.l.com/irritacao-e-bolhas-na-pele-do-bebe">Irritação e bolhas
-                                na pele do bebê</a></h3>
-                            <div class="meta">
-                                <span class="date"><i class="fa fa-clock-o"></i> 18 de junho de 2018</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="logo">
+            <div class="container">
+                <img src="../../../build/images/logo.png" height="40">
+                <i class="fa fa-bars sidebar-collapse"></i>
             </div>
         </div>
-    </div>
+
+    </header>
 
     <div class="page-content">
         <!-- @@placeholder= content -->
