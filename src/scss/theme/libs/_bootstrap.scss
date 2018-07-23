@@ -14,14 +14,15 @@
         box-shadow: none;
         color:      lighten(color('bg'), 40%);
         border: {
-            color: #DEE9EE;
+            color: #DBE2E8;
             width: 1px;
         }
         &:hover, &:focus {
             border-color: #ABC7D5;
         }
-        @include placeholder( lighten(color('bg'), 50%));
-        @include rem(padding, 12px 15px);
+        @include box-shadow(0 2px 2px 0 rgba(46, 60, 73, 0.05));
+        @include placeholder(lighten(color('bg'), 50%));
+        @include rem(padding, 10px 15px);
         @include rem(font-size, 10px);
 
     }
@@ -39,7 +40,7 @@
     letter-spacing: 1px;
     @include rem(font-size, 11px);
 
-    &.btn-lg{
+    &.btn-lg {
         @include rem(padding, 15px 60px);
     }
 

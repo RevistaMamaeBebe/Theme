@@ -57,7 +57,7 @@
 
         $self = this;
 
-        this.loader     = $('.loader');
+        this.loader     = $('.loader-content');
         this.header     = $('.header');
         this.navContent = $('.nav-content');
         this.navBar     = $('.navbar');

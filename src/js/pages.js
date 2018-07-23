@@ -24,20 +24,8 @@
 
     Pages.prototype.initTimeline = function () {
 
-        var separator     = 3,
-            timeline      = $(".timeline"),
-            timeline_item = $(".timeline .item");
-
-        // for (var i = 0; i < 43; i++) {
-        //     timeline.append('<article class="item">' +
-        //         '<div class="content">' +
-        //         '<div class="box">' +
-        //         '<a href="">4 semanas de gravidez ' + i + '</a>' +
-        //         '<p>Você já fez um teste de gravidez? É provável que suspeite que algo "diferente" está acontecendo dentro de você.</p>' +
-        //         '</div>' +
-        //         '</div>' +
-        //         '</article>')
-        // }
+        var separator = 3,
+            timeline  = $('.timeline');
 
         var timeline_item = $(".timeline .item");
 
@@ -75,6 +63,13 @@
             }
         }
 
+        var timeline_item = timeline.find('.item'),
+            timeline_box  = timeline.find('.box-time');
+
+        timeline_box.eq(0).css('borderColor', timeline_item.eq(0).css('backgroundColor'));
+        if(timeline_box.length >= 2) {
+            timeline_box.eq(1).css('borderColor', timeline_item.last().css('backgroundColor'));
+        }
     }
 
     Pages.prototype.initLogin = function () {

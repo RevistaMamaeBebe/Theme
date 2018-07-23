@@ -12,6 +12,7 @@ var gulp        = require('gulp'),
     watch       = require('gulp-watch'),
     imagemin    = require('gulp-imagemin'),
     extender    = require('gulp-html-extend'),
+    modernizr   = require('gulp-modernizr'),
     jsjson      = require('./json/js.json'),
     cssjson     = require('./json/css.json'),
     fontsjson   = require('./json/fonts.json');
@@ -35,7 +36,13 @@ var jsfiles     = [
         'src/images/**/**/*'],
     htmlfiles   = [
         'src/html/**/*.html',
-        'src/html/**/**/*.html'];
+        'src/html/**/**/*.html'],
+    pjsfiles    = [
+        'src/plugins/**/*.js',
+        'src/plugins/**/**/*.js'],
+    pcssfiles   = [
+        'src/plugins/**/*.css',
+        'src/plugins/**/**/*.css'];
 
 
 var tsProject = typescript.createProject('tsconfig.json', {noImplicitAny: true});
@@ -65,16 +72,17 @@ gulp.task('typescript', ['jshint', 'cleanjs'], function () {
 });
 
 // ** Minifica os arquivos js **//
-gulp.task('uglify', ['jshint'], function () {
+gulp.task('uglify', function () {
 
     var files = Object.keys(jsjson).map(function (k) {
         return jsjson[k]
     });
 
-    return [
-        gulp.src(files).pipe(concat('libs.min.js')).pipe(uglify()).pipe(gulp.dest('build/js')).pipe(connect.reload()),
-        gulp.src(jsfiles).pipe(concat('core.min.js')).pipe(uglify()).pipe(gulp.dest('build/js')).pipe(connect.reload())
+    var filesConcat = files.concat(pjsfiles);
 
+    return [
+        gulp.src(filesConcat).pipe(concat('libs.min.js')).pipe(gulp.dest('build/js')).pipe(connect.reload()),
+        gulp.src(jsfiles).pipe(concat('core.min.js')).pipe(gulp.dest('build/js')).pipe(connect.reload())
     ];
 });
 
@@ -93,8 +101,10 @@ gulp.task('cssmin', ['sass'], function () {
         return cssjson[k]
     });
 
+    var filesConcat = files.concat(pcssfiles);
+
     return [
-        gulp.src(files).pipe(concat('libs.min.css')).pipe(cleancss()).pipe(gulp.dest('build/css')).pipe(connect.reload()),
+        gulp.src(filesConcat).pipe(concat('libs.min.css')).pipe(cleancss()).pipe(gulp.dest('build/css')).pipe(connect.reload()),
         gulp.src(cssfiles).pipe(concat('core.min.css')).pipe(cleancss()).pipe(gulp.dest('build/css')).pipe(connect.reload())
     ];
 });
@@ -106,7 +116,10 @@ gulp.task('imagemin', ['cleanimages'], function () {
 
 // ** Extende os arquivos html **//
 gulp.task('extend', function () {
-    return gulp.src(htmlfiles).pipe(extender({annotations: true, verbose: false})).pipe(gulp.dest('build/html')).pipe(connect.reload());
+    return gulp.src(htmlfiles).pipe(extender({
+                                                 annotations: true,
+                                                 verbose: false
+                                             })).pipe(gulp.dest('build/html')).pipe(connect.reload());
 });
 
 // ** Copia os arquivos de fonts **//

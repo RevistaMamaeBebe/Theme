@@ -1,0 +1,201 @@
+.magazine {
+    margin: 60px 0;
+    .item {
+        display:       inline-block;
+        position:      relative;
+        overflow:      hidden;
+        margin-bottom: 30px;
+        @include box-shadow(0 5px 5px rgba(color('matriz'), 0.15));
+
+        figure {
+            margin: 0;
+            &:after {
+                content:  '';
+                position: absolute;
+                top:      0;
+                bottom:   0;
+                left:     0;
+                right:    0;
+                overflow: hidden;
+                @include box-shadow(inset 0 0 0 1px rgba(0, 0, 0, .1));
+            }
+        }
+
+        img {
+            max-width:  100%;
+        }
+    }
+}
+
+.magazine-viewport {
+    .loader {
+        background-color: transparent;
+    }
+    .buttons {
+        width:    40px;
+        height:   100%;
+        position: absolute;
+        top:      0;
+        &.next-button {
+            right: -40px;
+        }
+
+        &.previous-button {
+            left: -40px;
+        }
+
+        &.previous-button-hover,
+        &.next-button-hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+    }
+}
+
+.magazine-content {
+    width:  1040px;
+    height: 736px;
+    margin: auto auto;
+}
+
+.flipbook {
+
+    margin: 0 auto;
+
+    &.animated {
+        @include transition(margin-left 0.2s ease-in-out);
+    }
+
+    .page {
+        background-color:  white;
+        background-repeat: no-repeat;
+        background-size:   100% 100%;
+        @include box-shadow(none);
+
+        img {
+            width:  100%;
+            height: 100%;
+            @include css3-prefix(user-select, none);
+        }
+    }
+
+    .page-wrapper {
+        -webkit-perspective: 2000px;
+        -moz-perspective:    2000px;
+        -ms-perspective:     2000px;
+        -o-perspective:      2000px;
+        perspective:         2000px;
+    }
+
+    .odd, .even {
+        position: relative;
+        &:before {
+            content:  '';
+            position: absolute;
+            top:      0;
+            left:     0;
+            width:    100%;
+            height:   100%;
+            z-index:  10;
+        }
+    }
+    .even:before {
+        background: -webkit-gradient(linear, left top, right top, color-stop(0.95, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0.2)));
+        @include css3-prefix(background-image, linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%));
+    }
+
+    .odd:before {
+        background: -webkit-gradient(linear, right top, left top, color-stop(0.95, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0.15)));
+        @include css3-prefix(background-image, linear-gradient(right, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.15) 100%));
+    }
+
+    .shadow {
+        @include box-shadow(none !important);
+    }
+
+    .load-file {
+        position: absolute;
+        top:      50%;
+        left:     50%;
+        width:    70px;
+        height:   70px;
+        @include transform(translate(-50%, -50%));
+    }
+}
+
+.premium-content {
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    height:          100%;
+    padding:         0 50px;
+    background: {
+        image:    url(../images/baby/10.jpg);
+        size:     cover;
+        position: center;
+    }
+
+    &:after {
+        content:          '';
+        position:         absolute;
+        top:              0;
+        bottom:           0;
+        left:             0;
+        right:            0;
+        background-color: rgba(#fff, 0.7);
+    }
+
+    .content {
+        position: relative;
+        z-index:  1000;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-weight:    700;
+        color:          color('info');
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .btn {
+        padding: 15px;
+        @include rem(font-size, 10px);
+    }
+
+}
+
+.modal-magazine {
+
+    .modal-close {
+        width:            60px;
+        height:           60px;
+        line-height:      60px;
+        position:         absolute;
+        top:              0;
+        right:            0;
+        background-color: #333;
+        text-align:       center;
+        cursor:           pointer;
+        z-index:          9999;
+        &:before {
+            font:    normal normal normal 24px/1 FontAwesome;
+            content: "\f00d";
+            color:   #FFF;
+        }
+    }
+
+    .modal-dialog {
+        max-width: 100%;
+        height:    100%;
+        margin:    0;
+    }
+    .modal-content {
+        background-color: transparent;
+        width:            100%;
+        height:           100%;
+        box-shadow:       none;
+    }
+}

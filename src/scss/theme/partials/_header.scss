@@ -46,6 +46,26 @@
             @include transition(all .2s ease-in-out);
         }
 
+        //** Mobile content **//
+        .mobile {
+            display:     none;
+            align-items: center;
+            .nav {
+                margin: {
+                    top:  7px;
+                    left: auto;
+                }
+                color:           lighten(color('bg'), 30%);
+                text-decoration: none;
+                &:hover {
+                    color: color('info');
+                }
+                i {
+                    font-size: 26px;
+                }
+            }
+        }
+
         //** Navbar **//
         .nav-content {
             position: relative;

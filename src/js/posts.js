@@ -21,7 +21,7 @@
         $self.posts.filter('#main').find('article:eq(0)').after('<div class="ads mid"></div>');
         $self.posts.filter('#main').find('article:eq(3), article:eq(9)').after('<div class="ads wide"></div>');
 
-        $self.posts.find('.ads.mid').wrap('<div class="col-lg-4"></div>');
+        $self.posts.find('.ads.mid').wrap('<div class="col"></div>');
         $self.posts.find('.ads.wide').wrap('<div class="col-lg-12"></div>');
     }
 
