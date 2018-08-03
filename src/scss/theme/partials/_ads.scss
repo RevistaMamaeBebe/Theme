@@ -1,12 +1,19 @@
 /** ADS **/
 .ads {
     //background-color: darken(color('light'), 2%);
-    width:       100%;
-    min-height:  300px;
-    position:    relative;
-    font-family: 'Montserrat', cursive;
-    border:      1px solid #F5F5F5;
-    padding:     10px;
+    width:           100%;
+    min-height:      300px;
+    position:        relative;
+    font-family:     'Montserrat', cursive;
+    border:          1px solid #F5F5F5;
+    padding:         10px;
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    img {
+        max-height: 100%;
+        max-width:  100%;
+    }
     &:before {
         content:        'Publicidade';
         position:       absolute;
@@ -20,7 +27,11 @@
     }
     &.wide {
         width:      100%;
-        min-height: 110px;
+        max-height: 140px;
+        min-height: 140px;
+        img {
+            height: 140px - 20px;
+        }
     }
 
     .item {

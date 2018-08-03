@@ -9938,7 +9938,19 @@ img.no-image {
   position: relative;
   font-family: 'Montserrat', cursive;
   border: 1px solid #F5F5F5;
-  padding: 10px; }
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .ads img {
+    max-height: 100%;
+    max-width: 100%; }
   .ads:before {
     content: 'Publicidade';
     position: absolute;
@@ -9951,7 +9963,10 @@ img.no-image {
     font-size: 0.66667rem; }
   .ads.wide {
     width: 100%;
-    min-height: 110px; }
+    max-height: 140px;
+    min-height: 140px; }
+    .ads.wide img {
+      height: 120px; }
   .ads .item {
     background: #FFF;
     position: relative;
