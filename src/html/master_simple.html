@@ -13,26 +13,75 @@
 <body>
 
 <div class="overlay"></div>
-<div class="loader"></div>
 
-<div class="main-content">
+<div class="loader-content">
+    <div class="loader"></div>
+</div>
 
-    <header class="header">
-        <div class="header-top"></div>
 
-        <div class="logo">
-            <div class="container">
-                <img src="../../../build/images/logo.png" height="40">
-                <i class="fa fa-bars sidebar-collapse"></i>
+
+<div class="container d-none d-lg-block">
+    <ul class="social-footer list-inline">
+        <li class="facebook">
+            <a href=""><div class="main-content">
+
+                <header class="header-simple">
+                    <div class="container">
+                        <a href="" class="logo pull-left">
+                            <img src="../../../build/images/logo.png">
+                        </a>
+                        <div class="content">
+                            <div class="account ml-auto">
+                                <a href="">
+                                    <div class="avatar">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </div>
+                                    <span>Michel Vieira</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="page-content">
+                    <!-- @@placeholder= content -->
+                </div>
+
             </div>
-        </div>
-
-    </header>
-
-    <div class="page-content">
-        <!-- @@placeholder= content -->
-    </div>
-
+                <i class="fa fa-facebook"></i>
+                <h3>Facebook</h3>
+                <span>Siga-nos no Facebook</span>
+            </a>
+        </li>
+        <li class="twitter">
+            <a href="">
+                <i class="fa fa-twitter"></i>
+                <h3>Twitter</h3>
+                <span>Siga-nos no Twitter</span>
+            </a>
+        </li>
+        <li class="googlep">
+            <a href="">
+                <i class="fa fa-google-plus"></i>
+                <h3>Google+</h3>
+                <span>Siga-nos no Google</span>
+            </a>
+        </li>
+        <li class="instagram">
+            <a href="">
+                <i class="fa fa-instagram"></i>
+                <h3>Instagram</h3>
+                <span>Siga-nos no Instagram</span>
+            </a>
+        </li>
+        <li class="pinterest">
+            <a href="">
+                <i class="fa fa-pinterest"></i>
+                <h3>Pinterest</h3>
+                <span>Siga-nos no Pinterest</span>
+            </a>
+        </li>
+    </ul>
 </div>
 
 <footer class="footer">
@@ -61,83 +110,6 @@
         </div>
     </div>
 </footer>
-
-
-<div class="modal fade modal-login" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="left-content" data-tab="email">
-                            <div class="social-content item-content">
-                                <div class="description-content">
-                                    <span>Revista Mamãe Bebê</span>
-                                    <h2>Torne-se um membro</h2>
-                                    <p>Torne-se um membro do nosso portal, e tenha acesso a conteúdos
-                                        exclusivos!</p>
-                                    <button type="submit" class="btn btn-googlep mb-3 btn-block">
-                                        <i class="fa fa-google-plus"></i> Inscreva-se usando o
-                                        Google
-                                        +
-                                    </button>
-                                    <button type="submit" class="btn btn-facebook mb-3 btn-block">
-                                        <i class="fa fa-facebook"></i> Inscreva-se usando o
-                                        Facebook
-                                    </button>
-                                    <button type="submit" class="btn btn-twitter btn-block">
-                                        <i class="fa fa-twitter"></i> Inscreva-se usando o Twitter
-                                    </button>
-                                    <div class="text-center mt-3">
-                                        <a href="">Já tenho minha conta</a>
-                                    </div>
-                                </div>
-                                <footer>
-                                    <p>
-                                        <span class="pull-left">Entrar usando um e-mail</span>
-                                        <a href="#" class="pull-right modal-login-tab" data-tab="email">Use seu e-mail
-                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                                    </p>
-                                </footer>
-                            </div>
-                            <div class="email-content item-content">
-                                <div class="description-content">
-                                    <span>Revista Mamãe Bebê</span>
-                                    <h2>Torne-se um membro</h2>
-                                    <p>Torne-se um membro do nosso portal, e tenha acesso a conteúdos
-                                        exclusivos!</p>
-                                    <form>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="" id="email" placeholder="E-mail">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="" id="senha" placeholder="Senha">
-                                        </div>
-                                          <button type="submit" class="btn btn-info btn-block">Cadastre-se</button>
-                                    </form>
-                                    <div class="text-center mt-3">
-                                        <a href="">Já tenho minha conta</a>
-                                    </div>
-                                </div>
-                                <footer>
-                                    <p>
-                                        <span class="pull-left">Entrar usando sua rede social</span>
-                                        <a href="#" class="pull-right modal-login-tab" data-tab="social">Use sua rede social
-                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                                    </p>
-                                </footer>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="right-content"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a5916949e515c00123e7d93&product=inline-share-buttons"></script>
 <script type="text/javascript" src="../../../build/js/libs.min.js"></script>

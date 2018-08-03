@@ -1,71 +1,56 @@
 <!-- @@master  = ../master_simple.html-->
 
 <!-- @@block  =  content-->
-<div class="login">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="left-content" data-tab="email">
-                <div class="social-content item-content">
-                    <div class="description-content">
-                        <span>Revista Mamãe Bebê</span>
-                        <h2>Torne-se um membro</h2>
-                        <p>Torne-se um membro do nosso portal, e tenha acesso a conteúdos
-                            exclusivos!</p>
-                        <button type="submit" class="btn btn-googlep mb-3 btn-block">
-                            <i class="fa fa-google-plus"></i> Inscreva-se usando o
-                            Google
-                            +
-                        </button>
-                        <button type="submit" class="btn btn-facebook mb-3 btn-block">
-                            <i class="fa fa-facebook"></i> Inscreva-se usando o
-                            Facebook
-                        </button>
-                        <button type="submit" class="btn btn-twitter btn-block">
-                            <i class="fa fa-twitter"></i> Inscreva-se usando o Twitter
-                        </button>
-                        <div class="text-center">
-                            <a href="">Já tenho minha conta</a>
-                        </div>
+<div class="login-page">
+    <div class="login-box">
+        <div class="content">
+            <div class="row no-gutters">
+                <div class="col">
+                    <div class="left-content">
+                        <a href="#" class="back"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Voltar para o site</a>
                     </div>
-                    <footer>
-                        <p>
-                            <span class="pull-left">Entrar usando um e-mail</span>
-                            <a href="#" class="pull-right modal-login-tab" data-tab="email">Use seu e-mail
-                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                        </p>
-                    </footer>
                 </div>
-                <div class="email-content item-content">
-                    <div class="description-content">
-                        <span>Revista Mamãe Bebê</span>
-                        <h2>Torne-se um membro</h2>
-                        <p>Torne-se um membro do nosso portal, e tenha acesso a conteúdos
-                            exclusivos!</p>
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="" id="email" placeholder="E-mail">
+                <div class="col-md-6">
+                    <div class="right-contet">
+                        <div class="description-content d-flex flex-column justify-content-center">
+                            <img src="../../images/logo.png" class="logo">
+                            <div class="text-center">
+                                <h2>Torne-se um membro</h2>
+                                <p>Informe seus dados abaixo</p>
                             </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="" id="senha" placeholder="Senha">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="" id="name" placeholder="Nome" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="" id="email" placeholder="E-mail" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="" id="senha" placeholder="Senha">
+                                </div>
+                                <button type="submit" class="btn btn-info btn-block">Cadastre-se</button>
+                            </form>
+                            <div class="or"><span>Ou inscreva-se usando</span></div>
+
+                            <div class="social-btn d-flex" role="group">
+                                <button type="submit" class="btn btn-facebook w-100 mr-2">
+                                    <i class="fa fa-facebook"></i> Facebook
+                                </button>
+                                <button type="submit" class="btn btn-twitter w-100 mr-2">
+                                    <i class="fa fa-twitter"></i> Twitter
+                                </button>
+                                <button type="submit" class="btn btn-googlep w-100">
+                                    <i class="fa fa-google-plus"></i> Google +
+                                </button>
                             </div>
-                            <button type="submit" class="btn btn-info btn-block">Cadastre-se</button>
-                        </form>
-                        <div class="text-center">
-                            <a href="">Já tenho minha conta</a>
+
+                            <div class="text-center my-4">
+                                <a href="#">Já tenho minha conta</a>
+                            </div>
                         </div>
                     </div>
-                    <footer>
-                        <p>
-                            <span class="pull-left">Entrar usando sua rede social</span>
-                            <a href="#" class="pull-right modal-login-tab" data-tab="social">Use sua rede social
-                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                        </p>
-                    </footer>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="right-content"></div>
         </div>
     </div>
 </div>

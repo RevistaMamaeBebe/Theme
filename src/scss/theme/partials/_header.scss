@@ -183,5 +183,57 @@
             }
         }
     }
+}
 
+.header-simple {
+    $h: 90px;
+    height: $h;
+    @extend .header;
+
+    .logo img {
+        max-height:   $h;
+        padding: {
+            top:    20px;
+            bottom: 30px;
+        }
+    }
+
+    .content {
+        display:         flex;
+        align-items:     center;
+        justify-content: center;
+        height:          $h;
+        font-family:     'Open Sans', cursive;
+        .account {
+            a {
+                color:           lighten(color('bg'), 30%);
+                text-decoration: none;
+                .avatar {
+                    width:            60px;
+                    height:           60px;
+                    float:            left;
+                    text-align:       center;
+                    overflow:         hidden;
+                    position:         relative;
+                    background-color: #FBFBFB;
+                    @include border-radius(50%);
+                    i {
+                        position: absolute;
+                        top:      50%;
+                        left:     50%;
+                        @include transform(translate(-50%, -50%));
+                        @include rem('font-size', 24px);
+                    }
+                }
+                span {
+                    display:        inline-block;
+                    font-weight:    700;
+                    text-transform: uppercase;
+                    margin-left:    10px;
+                    margin-top:     22px;
+                    @include rem('font-size', 9px);
+                }
+            }
+        }
+    }
 }

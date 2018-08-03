@@ -1,0 +1,66 @@
+<!-- @@master  = ../master_simple.html-->
+
+<!-- @@block  =  content-->
+<div class="container">
+    <div class="payment-page">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box">
+                    <h4>Assinatura Semanal</h4>
+                    <ul class="check-list">
+                        <li>Acesso a todo conteúdo do site</li>
+                        <li>Concursos para capa da revista</li>
+                        <li>Conteúdo exclusivo</li>
+                    </ul>
+                    <div class="price">
+                        <span>R$ 19,90/<strong>Semana</strong></span>
+                        <div class="obs"><a href="">Alterar plano</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="box">
+                    <div class="payment-methods">
+                        <p>Selecione uma forma de pagamento:</p>
+
+                        <div class="accordion" id="carteira-acc">
+                            <div class="card">
+                                <div class="card-header" id="carteira-acc-one">
+                                    <div class="mb-0 group-header collapsed" data-toggle="collapse" data-target="#carteira" aria-expanded="false" aria-controls="carteira">
+                                        <h5>Outras Formas</h5>
+                                        <div class="logos">
+                                            <img src="../../../build/images/payments/pagseguro.png">
+                                            <img src="../../../build/images/payments/mercadopago.png">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="carteira" class="collapse" aria-labelledby="carteira-acc-one" data-parent="#carteira-acc">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <select class="form-control" name="" id="cc_payment">
+                                                    <option value="pagseguro">Pagseguro</option>
+                                                    <option value="mercadopago">Mercado Pago</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-block btn-lg btn-outline-success mt-4">
+                                                Confirmar compra
+                                            </button>
+                                        </form>
+                                        <div class="price">
+                                            <span>R$ 19,90/<strong>Semana</strong></span>
+                                            <div class="obs"><a href="">Alterar plano</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- @@close-->

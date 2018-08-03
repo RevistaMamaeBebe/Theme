@@ -11,7 +11,7 @@ body {
 }
 
 .page-content {
-    min-height: 350px;
+    min-height: 400px;
     position:   relative;
 }
 
@@ -107,4 +107,6 @@ $loader: 50px;
 @import "partials/magazine";
 @import "partials/contact";
 @import "partials/login";
+@import "partials/price";
+@import "partials/payment";
 @import "partials/medias";

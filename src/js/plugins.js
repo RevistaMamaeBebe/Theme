@@ -85,7 +85,7 @@
 
         this.initChat();
         this.initCarousel();
-        this.initMagazine();
+        // this.initMagazine();
         this.initModal();
 
     }
