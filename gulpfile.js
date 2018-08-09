@@ -1,6 +1,5 @@
 var gulp        = require('gulp'),
-    typescript  = require('gulp-typescript'),
-    autoprefix  = require("gulp-autoprefixer"),
+    autoprefix  = require('gulp-autoprefixer'),
     sass        = require('gulp-sass'),
     connect     = require("gulp-connect"),
     uglify      = require('gulp-uglify'),
@@ -12,18 +11,18 @@ var gulp        = require('gulp'),
     watch       = require('gulp-watch'),
     imagemin    = require('gulp-imagemin'),
     extender    = require('gulp-html-extend'),
-    modernizr   = require('gulp-modernizr'),
-    jsjson      = require('./json/js.json'),
-    cssjson     = require('./json/css.json'),
-    fontsjson   = require('./json/fonts.json');
+    sourcemaps  = require('gulp-sourcemaps'),
+    babel       = require('gulp-babel');
+
+
+var jsjson    = require('./json/js.json'),
+    cssjson   = require('./json/css.json'),
+    fontsjson = require('./json/fonts.json');
 
 // ** Pastas de arquivos **//
 var jsfiles     = [
         'src/js/*.js',
         'src/js/**/*.js'],
-    tsfiles     = [
-        'src/ts/*.ts',
-        'src/ts/**/*.ts'],
     cssfiles    = [
         'src/css/*.css',
         'src/css/**/*.css'],
@@ -45,8 +44,6 @@ var jsfiles     = [
         'src/plugins/**/**/*.css'];
 
 
-var tsProject = typescript.createProject('tsconfig.json', {noImplicitAny: true});
-
 // ** Limpa todos os arquivos **//
 gulp.task('clean', function () {
     return gulp.src('build').pipe(clean());
@@ -64,11 +61,6 @@ gulp.task('cleanimages', function () {
 // ** Verifica se existe erros nos arquivos JS **//
 gulp.task('jshint', function () {
     return gulp.src('src/js/*.js').pipe(jshint()).pipe(jshint.reporter('default'));
-});
-
-// ** Minifica os arquivos ts **//
-gulp.task('typescript', ['jshint', 'cleanjs'], function () {
-    return gulp.src(tsfiles).pipe(tsProject()).pipe(gulp.dest('src/js'));
 });
 
 // ** Minifica os arquivos js **//
@@ -116,10 +108,11 @@ gulp.task('imagemin', ['cleanimages'], function () {
 
 // ** Extende os arquivos html **//
 gulp.task('extend', function () {
-    return gulp.src(htmlfiles).pipe(extender({
-                                                 annotations: true,
-                                                 verbose: false
-                                             })).pipe(gulp.dest('build/html')).pipe(connect.reload());
+    return gulp.src(htmlfiles).pipe(extender(
+        {
+            annotations: true,
+            verbose: false
+        })).pipe(gulp.dest('build/html')).pipe(connect.reload());
 });
 
 // ** Copia os arquivos de fonts **//
@@ -158,4 +151,3 @@ gulp.task('default', function (callback) {
 gulp.task('full', function (callback) {
     return runSequence('clean', ['uglify', 'cssmin', 'imagemin', 'fonts'], callback)
 });
-

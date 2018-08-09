@@ -57,10 +57,23 @@
     font-weight:    700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    @include rem(font-size, 11px);
+    height:         44px;
+    padding: {
+        top:    10px;
+        bottom: 10px;
+        left:   35px;
+        right:  35px;
+    }
+    @include rem(font-size, 9.5px !important);
 
     &.btn-lg {
-        padding: 12px 10px;
+        height: 60px;
+    }
+
+    &.btn-loading {
+        span {
+            @include rem(font-size, 9.5px !important);
+        }
     }
 
     &.btn-round {

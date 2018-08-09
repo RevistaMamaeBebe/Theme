@@ -59,6 +59,22 @@
         }
     }
 
+    Plugins.prototype.loadButton = function (type, element) {
+
+        var element = element ? element : '.btn-loading',
+            l       = Ladda.create(document.querySelector(element));
+
+        switch (type) {
+            case 'start':
+                l.start();
+                break;
+            case 'stop':
+                l.stop();
+                Ladda.stopAll();
+                break;
+        }
+    }
+
     Plugins.prototype.initModal = function () {
         $(document).on(
             {
@@ -79,14 +95,20 @@
             }, '.modal');
     }
 
+
+    Plugins.prototype.initLoadButton = function () {
+        Ladda.bind('.btn-loading');
+    }
+
     Plugins.prototype.init = function () {
 
         $self = this;
 
-        this.initChat();
+        // this.initChat();
         this.initCarousel();
         // this.initMagazine();
         this.initModal();
+        this.initLoadButton();
 
     }
 
