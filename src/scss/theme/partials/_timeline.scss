@@ -78,17 +78,6 @@ $color: (1: #FDAE49, 2: #F5937A, 3: #BC7C7A, 4: #46ACBB, 5: #47A5D9, 6: #9FC150,
                     z-index:          1;
                 }
             }
-
-            &:nth-child(even) {
-                .box {
-                    top:    100%;
-                    bottom: auto;
-                    &:before {
-                        top:    0;
-                        bottom: auto;
-                    }
-                }
-            }
         }
 
         .box-time {

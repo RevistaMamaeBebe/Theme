@@ -31,6 +31,12 @@
     textarea {
         resize: vertical;
     }
+
+    span {
+        text-transform: uppercase;
+        font-weight:    700;
+        @include rem('font-size', 8px);
+    }
 }
 
 .has-success .form-control {
@@ -57,17 +63,10 @@
     font-weight:    700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    height:         44px;
-    padding: {
-        top:    10px;
-        bottom: 10px;
-        left:   35px;
-        right:  35px;
-    }
     @include rem(font-size, 9.5px !important);
 
     &.btn-lg {
-        height: 60px;
+        padding: .8rem 1rem;
     }
 
     &.btn-loading {

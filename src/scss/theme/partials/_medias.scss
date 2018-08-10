@@ -61,6 +61,19 @@
         display: none;
     }
 
+    .timeline {
+        margin-bottom: 20px;
+        .group {
+            padding: 0;
+            &:before {
+                display: none !important;
+            }
+            .box-time {
+                display: none;
+            }
+        }
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -70,6 +83,17 @@
         margin-bottom: 10px;
         .box-image {
             height: 400px !important;
+        }
+    }
+
+    .timeline {
+        .group {
+            display: block;
+            margin:  0 0;
+            .item {
+                flex:   0 0 100% !important;
+                margin: 110px 0;
+            }
         }
     }
 }
@@ -235,6 +259,19 @@
 }
 
 @media (min-width: 768px) {
+
+    .timeline .group .item {
+        &:nth-child(even) {
+            .box {
+                top:    100%;
+                bottom: auto;
+                &:before {
+                    top:    0;
+                    bottom: auto;
+                }
+            }
+        }
+    }
 
 }
 

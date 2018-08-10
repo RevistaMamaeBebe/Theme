@@ -8669,6 +8669,11 @@ body {
       color: #c3c6cf; }
   .form-group textarea {
     resize: vertical; }
+  .form-group span {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 8px;
+    font-size: 0.66667rem; }
 
 .has-success .form-control {
   border-color: #A9D22C;
@@ -8690,15 +8695,10 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  height: 44px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 35px;
-  padding-right: 35px;
   font-size: 9.5px !important;
   font-size: 0.79167rem !important; }
   .btn.btn-lg, .btn-group-lg > .btn {
-    height: 60px; }
+    padding: .8rem 1rem; }
   .btn.btn-loading span {
     font-size: 9.5px !important;
     font-size: 0.79167rem !important; }
@@ -10241,12 +10241,6 @@ img.no-image {
           bottom: 0;
           left: 50%;
           z-index: 1; }
-      .timeline .group .item:nth-child(even) .box {
-        top: 100%;
-        bottom: auto; }
-        .timeline .group .item:nth-child(even) .box:before {
-          top: 0;
-          bottom: auto; }
     .timeline .group .box-time {
       width: 200px;
       height: 200px;
@@ -10829,7 +10823,15 @@ img.no-image {
       .grid-posts article:last-child .box-image {
         height: 400px !important; }
   .posts-category {
-    display: none; } }
+    display: none; }
+  .timeline {
+    margin-bottom: 20px; }
+    .timeline .group {
+      padding: 0; }
+      .timeline .group:before {
+        display: none !important; }
+      .timeline .group .box-time {
+        display: none; } }
 
 @media (max-width: 768px) {
   .grid-posts article {
@@ -10837,7 +10839,15 @@ img.no-image {
     height: 400px !important;
     margin-bottom: 10px; }
     .grid-posts article .box-image {
-      height: 400px !important; } }
+      height: 400px !important; }
+  .timeline .group {
+    display: block;
+    margin: 0 0; }
+    .timeline .group .item {
+      -webkit-box-flex: 0 !important;
+          -ms-flex: 0 0 100% !important;
+              flex: 0 0 100% !important;
+      margin: 110px 0; } }
 
 @media (min-width: 992px) {
   .header .navbar, .header.fixed .header-content .navbar, .header-simple .navbar {
@@ -10915,3 +10925,11 @@ img.no-image {
     display: none; }
   .posts-category .posts article:not(:nth-child(1)):before {
     display: none; } }
+
+@media (min-width: 768px) {
+  .timeline .group .item:nth-child(even) .box {
+    top: 100%;
+    bottom: auto; }
+    .timeline .group .item:nth-child(even) .box:before {
+      top: 0;
+      bottom: auto; } }
