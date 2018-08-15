@@ -1,3 +1,43 @@
+///******************************* MEDIA *******************************///
+
+//** Max Width **//
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
+}
+
+//** Min Width **//
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 576px) {
+
+}
+///******************************* MEDIA *******************************///
+
+
+
+
 ///******************************* MAX WIDTH *******************************///
 
 @media (max-width: 1200px) {
@@ -12,7 +52,7 @@
 
 @media (max-width: 992px) {
     html {
-        font-size: 80%;
+        font-size: 85%;
     }
 
     .modal-login {
@@ -39,28 +79,6 @@
         }
     }
 
-    .grid-posts article {
-        width:   calc(50% - 10px) !important;
-        height:  300px !important;
-        padding: 0;
-        margin:  5px;
-        .box-image {
-            height: 300px !important;
-        }
-
-        &:last-child {
-            width:  100% !important;
-            height: 400px !important;
-            .box-image {
-                height: 400px !important;
-            }
-        }
-    }
-
-    .posts-category {
-        display: none;
-    }
-
     .timeline {
         margin-bottom: 20px;
         .group {
@@ -77,15 +95,6 @@
 }
 
 @media (max-width: 768px) {
-    .grid-posts article {
-        width:         100% !important;
-        height:        400px !important;
-        margin-bottom: 10px;
-        .box-image {
-            height: 400px !important;
-        }
-    }
-
     .timeline {
         .group {
             display: block;
@@ -135,127 +144,6 @@
         }
     }
 
-    .posts {
-        &#main {
-            article {
-                &:nth-child(1) {
-                    .post {
-                        height: 300px;
-                    }
-                    .box-image {
-                        width:  55%;
-                        height: 100%;
-                    }
-                    .content {
-                        width: 45%;
-                    }
-                }
-
-                &:nth-child(3),
-                &:nth-child(4),
-                &:nth-child(5) {
-                    .post {
-                        height: auto;
-                    }
-
-                    .box-image {
-                        height: 250px;
-                    }
-                }
-
-                &:nth-child(7) {
-                    .box-image {
-                        height: 100%;
-                    }
-                    .content {
-                        position:   absolute;
-                        z-index:    10;
-                        bottom:     0;
-                        left:       0;
-                        right:      0;
-                        color:      #FFF;
-                        background: linear-gradient(to top, rgba(#000, 0.5), transparent);
-                    }
-                    .meta span {
-                        color: #F1F1F1;
-                    }
-                    .btn {
-                        display: none;
-                    }
-                    a {
-                        color: #FFF;
-                    }
-                    h3 {
-                        @include rem(font-size, 20px);
-                    }
-                    h3,
-                    p {
-                        color: #FFF;
-                    }
-                }
-
-                &:nth-child(7),
-                &:nth-child(8),
-                &:nth-child(9),
-                &:nth-child(10),
-                &:nth-child(11),
-                &:nth-child(12) {
-                    .post {
-                        height: 400px;
-                    }
-                }
-
-                &:nth-child(8),
-                &:nth-child(9),
-                &:nth-child(10),
-                &:nth-child(11),
-                &:nth-child(12) {
-                    .box-image {
-                        height: 200px;
-                    }
-                    h3 {
-                        @include rem(font-size, 9px);
-                    }
-                }
-            }
-        }
-    }
-
-    .posts-category {
-        .posts {
-            article {
-                &:not(:nth-child(1)) {
-                    $h: 90px;
-                    .post {
-                        height: $h;
-                    }
-                    .post-categories,
-                    .post-tags {
-                        display: none;
-                    }
-                    .content {
-                        padding-left: $h + 10px;
-                    }
-                    .box-image {
-                        width:    $h;
-                        height:   $h;
-                        position: absolute;
-                        top:      0;
-                        left:     0;
-                    }
-                    h3 {
-                        @include rem(font-size, 9px);
-                    }
-                    p, .btn {
-                        display: none;
-                    }
-                    &:before {
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
 }
 
 @media (min-width: 768px) {

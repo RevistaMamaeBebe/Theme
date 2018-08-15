@@ -1,0 +1,63 @@
+.btn {
+    font-family:    'Open Sans', cursive;
+    font-weight:    700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @include rem(font-size, 9.5px !important);
+
+    &.btn-lg {
+        padding: .8rem 1rem;
+    }
+
+    &.btn-loading {
+        span {
+            @include rem(font-size, 9.5px !important);
+        }
+    }
+
+    &.btn-round {
+        @include border-radius(40px);
+    }
+
+    &.btn-shadow {
+        @include text-shadow(0 1px 2px rgba(0, 0, 0, .2));
+        @each $name, $color in $colors {
+            &.btn-#{$name} {
+                border-color:     darken($color, 2%);
+                background-color: $color;
+                @include box-shadow(1px 3px 8px 0 rgba($color, .5));
+                &:hover{
+                    @include box-shadow(1px 1px 8px 0 rgba($color, .9));
+                }
+            }
+        }
+    }
+
+    &.btn-glow {
+        @each $name, $color in $colors {
+            &.btn-#{$name} {
+                border-color:     darken($color, 2%);
+                background-color: $color;
+                @include text-shadow(0 1px 2px rgba(0, 0, 0, .2));
+                @include box-shadow(0 2px 12px 0 rgba($color, .9));
+            }
+        }
+    }
+
+    &.btn-gradient {
+        @each $name, $color in $colors {
+            &.btn-#{$name} {
+                @include css3-prefix('background-image', linear-gradient(to right, adjust-hue($color, 10deg), $color));
+                @include box-shadow(none);
+            }
+        }
+    }
+
+    &.btn-bevel {
+        @each $name, $color in $colors {
+            &.btn-#{$name} {
+                @include box-shadow(0 3px 0 0 darken($color, 5%));
+            }
+        }
+    }
+}

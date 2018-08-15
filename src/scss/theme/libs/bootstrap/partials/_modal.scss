@@ -1,0 +1,13 @@
+.modal-backdrop {
+    background: color('bg');
+    &.show {
+        @include opacity(0.8);
+    }
+}
+
+.modal-content {
+    border:   none;
+    overflow: hidden;
+    @include border-radius(5px);
+    @include box-shadow(0px 10px 30px darken(color('bg'), 0%));
+}

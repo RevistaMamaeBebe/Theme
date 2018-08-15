@@ -1,0 +1,28 @@
+.pagination {
+    .page-item {
+        margin: 5px;
+        .page-link {
+            color:        #333;
+            border-color: #F1F1F1;
+            padding:      10px;
+            min-width:    38px;
+            text-align:   center;
+            @include rem(font-size, 10px);
+            @include transition(all .3s ease-in-out);
+            &:hover {
+                background-color: color('info');
+                border-color:     color('info');
+                color:            #FFF;
+            }
+        }
+        &.active span {
+            @extend .page-link:hover;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

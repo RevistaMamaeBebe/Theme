@@ -1,0 +1,57 @@
+.form-group {
+
+    font-family: 'Open Sans', cursive;
+
+    label {
+        color:          lighten(color('bg'), 30%);
+        text-transform: uppercase;
+        font-weight:    700;
+        @include rem(font-size, 10px);
+    }
+
+    .form-control {
+        box-shadow: none;
+        color:      lighten(color('bg'), 40%);
+        padding:    10px 18px 10px 18px;
+        min-height: 44px;
+        border: {
+            color: #DBE2E8;
+            width: 1px;
+        }
+        &:hover, &:focus {
+            border-color: #ABC7D5;
+        }
+        @include box-shadow(0 2px 2px 0 rgba(46, 60, 73, 0.05));
+        @include placeholder(lighten(color('bg'), 50%));
+        @include rem(font-size, 10px);
+
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    span {
+        text-transform: uppercase;
+        font-weight:    700;
+        @include rem('font-size', 8px);
+    }
+}
+
+.has-success .form-control {
+    border-color:       color('success');
+    -webkit-box-shadow: none;
+    box-shadow:         none;
+}
+
+.has-warning .form-control {
+    border-color:       color('warning');
+    -webkit-box-shadow: none;
+    box-shadow:         none;
+}
+
+.has-error .form-control {
+    border-color:       color('danger');
+    -webkit-box-shadow: none;
+    box-shadow:         none;
+}
