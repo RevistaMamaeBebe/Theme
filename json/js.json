@@ -1,12 +1,9 @@
 {
   "1": "node_modules/jquery/dist/jquery.min.js",
-  "3": "node_modules/jquery-mousewheel/jquery.mousewheel.js",
   "4": "node_modules/popper.js/dist/umd/popper.min.js",
   "5": "node_modules/bootstrap/dist/js/bootstrap.min.js",
   "6": "node_modules/owl.carousel/dist/owl.carousel.min.js",
-  "7": "node_modules/jquery-expander/jquery.expander.min.js",
-  "8": "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js",
-  "9": "node_modules/waitMe/waitMe.min.js",
   "10": "node_modules/pdfjs-dist/build/pdf.min.js",
-  "11": "node_modules/pdfjs-dist/build/pdf.worker.min.js"
+  "11": "node_modules/pdfjs-dist/build/pdf.worker.min.js",
+  "12": "node_modules/jquery-lazy/jquery.lazy.min.js"
 }

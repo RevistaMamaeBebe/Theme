@@ -1,0 +1,34 @@
+.page-search {
+    .box-search {
+        padding:        40px;
+        padding-bottom: 30px;
+        font-family:    'Open Sans', cursive;
+        h1 {
+            color:          #6B7074;
+            border-bottom:  1px solid rgba(#000, 0.03);
+            padding-bottom: 15px;
+            margin-bottom:  15px;
+            @include rem('font-size', 16px);
+            i {
+                margin-right: 15px;
+            }
+            span {
+                color: #C2C6CB;
+            }
+        }
+        p {
+            color:          #C2C6CB;
+            text-align:     right;
+            text-transform: uppercase;
+            margin: {
+                top:    25px;
+                bottom: 0;
+            }
+            @include rem('font-size', 9px);
+            span {
+                margin-left: 10px;
+                color:       #6B7074;
+            }
+        }
+    }
+}

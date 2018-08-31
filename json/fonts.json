@@ -1,3 +1,5 @@
 {
-    "1": "node_modules/font-awesome/fonts/*"
+    "1": "src/fonts/*",
+    "2": "src/fonts/*/*",
+    "3": "node_modules/font-awesome/fonts/*"
 }

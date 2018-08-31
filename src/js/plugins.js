@@ -46,6 +46,12 @@
 
     }
 
+    Plugins.prototype.initLazy = function () {
+        $('.lazy').lazy({
+                            threshold: 0
+                        });
+    }
+
     Plugins.prototype.waitMe = function (type, element, effect) {
         if (type == 'load') {
             $(element).waitMe(
@@ -109,6 +115,7 @@
         // this.initMagazine();
         this.initModal();
         this.initLoadButton();
+        this.initLazy();
 
     }
 

@@ -1,20 +1,15 @@
 //** Header **//
 .header {
-    background-color: #FFF;
-    @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
-
     .header-top {
         min-height:       60px;
-        border-bottom:    1px solid darken(color('default'), 2%);
         background-color: color('default');
         display:          flex;
         align-items:      center;
-        justify-content:  center;
-        a {
+        .nav-link {
             display: inline-block;
             color:   rgba(#FFF, 0.8);
             padding: 5px 10px;
-            @include rem('font-size', 8px);
+            @include rem('font-size', 8px !important);
             i {
                 @include rem('font-size', 12px);
             }
@@ -22,9 +17,50 @@
                 color: #FFF;
             }
         }
+
+        .nav-search {
+            border:        2px solid rgba(#fff, 0.5);
+            padding:       3px;
+            padding-right: 10px;
+            @include border-radius(20px);
+            @include transition(all .2s ease-in-out);
+            .input-group-text,
+            .form-control {
+                background-color: transparent;
+                border:           none;
+                outline:          none !important;
+                box-shadow:       none !important;
+                height:           auto;
+                color:            rgba(#fff, 0.8);
+                font-family:      'Open Sans', cursive;
+            }
+            .form-control {
+                padding-left:   0;
+                font-weight:    600;
+                text-transform: uppercase;
+                @include rem('font-size', 8px);
+                @include placeholder(rgba(#fff, 0.8));
+            }
+            &:hover {
+                border-color: rgba(#fff, 0.8);
+            }
+            &:focus-within {
+                background-color: #FFF;
+                @include box-shadow(0px 0px 30px rgba(color('bg'), 0.15));
+                .input-group-text,
+                .form-control {
+                    color: color('default');
+                    @include placeholder(color('default'));
+                }
+            }
+        }
+
+        .account {
+            margin-top: 4px;
+        }
     }
 
-    .header-top a,
+    .header-top .nav-link,
     .navbar-nav .nav-link {
         text-transform: uppercase;
         font: {
@@ -37,11 +73,12 @@
     .header-content {
         background-color: #FFF;
         display:          flex;
-        min-height:       130px;
         align-items:      center;
         position:         relative;
         z-index:          999;
+        padding:          30px 0;
         @include transition(all .2s ease-in-out);
+        @include box-shadow(0px 0px 30px rgba(color('matriz'), 0.15));
         img {
             @include transition(all .2s ease-in-out);
         }
@@ -170,70 +207,59 @@
         }
     }
 
-    &.fixed {
+    .account {
+        span {
+            color:          color('info');
+            cursor:         pointer;
+            text-transform: uppercase;
+            font: {
+                family: 'Open Sans', cursive;
+                weight: 700;
+            }
+            @include rem('font-size', 8px !important);
+            @include css3-prefix('user-select', none);
+            &:hover strong {
+                color: darken(color('info'), 10%);
+            }
+        }
+    }
+
+    &.fixed:not([data-header="simple"]) {
         height: 170px;
         .header-content {
             position:   fixed;
             width:      100%;
             top:        0;
             min-height: 85px;
+            padding:    10px 0;
             @extend .header;
             img {
                 height: 40px;
             }
         }
     }
-}
 
-.header-simple {
-    $h: 90px;
-    height: $h;
-    @extend .header;
-
-    .logo img {
-        max-height:   $h;
-        padding: {
-            top:    20px;
-            bottom: 30px;
-        }
-    }
-
-    .content {
-        display:         flex;
-        align-items:     center;
-        justify-content: center;
-        height:          $h;
-        font-family:     'Open Sans', cursive;
-        .account {
-            a {
-                color:           lighten(color('bg'), 30%);
-                text-decoration: none;
-                .avatar {
-                    width:            60px;
-                    height:           60px;
-                    float:            left;
-                    text-align:       center;
-                    overflow:         hidden;
-                    position:         relative;
-                    background-color: #FBFBFB;
-                    @include border-radius(50%);
-                    i {
-                        position: absolute;
-                        top:      50%;
-                        left:     50%;
-                        @include transform(translate(-50%, -50%));
-                        @include rem('font-size', 24px);
-                    }
-                }
-                span {
-                    display:        inline-block;
-                    font-weight:    700;
-                    text-transform: uppercase;
-                    margin-left:    10px;
-                    margin-top:     22px;
-                    @include rem('font-size', 9px);
-                }
+    &[data-header="simple"] {
+        $h: 90px;
+        min-height: $h;
+        .logo img {
+            max-height: $h;
+            padding: {
+                top:    20px;
+                bottom: 30px;
             }
+        }
+
+        .header-content {
+            padding: 0;
+        }
+
+        .content {
+            display:         flex;
+            align-items:     center;
+            justify-content: center;
+            min-height:      $h;
+            font-family:     'Open Sans', cursive;
         }
     }
 }

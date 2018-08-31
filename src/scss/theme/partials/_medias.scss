@@ -78,33 +78,10 @@
 
         }
     }
-
-    .timeline {
-        margin-bottom: 20px;
-        .group {
-            padding: 0;
-            &:before {
-                display: none !important;
-            }
-            .box-time {
-                display: none;
-            }
-        }
-    }
-
 }
 
 @media (max-width: 768px) {
-    .timeline {
-        .group {
-            display: block;
-            margin:  0 0;
-            .item {
-                flex:   0 0 100% !important;
-                margin: 110px 0;
-            }
-        }
-    }
+
 }
 
 @media (max-width: 576px) {
@@ -147,19 +124,6 @@
 }
 
 @media (min-width: 768px) {
-
-    .timeline .group .item {
-        &:nth-child(even) {
-            .box {
-                top:    100%;
-                bottom: auto;
-                &:before {
-                    top:    0;
-                    bottom: auto;
-                }
-            }
-        }
-    }
 
 }
 

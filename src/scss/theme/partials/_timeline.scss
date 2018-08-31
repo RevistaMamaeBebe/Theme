@@ -160,3 +160,71 @@ $color: (1: #FDAE49, 2: #F5937A, 3: #BC7C7A, 4: #46ACBB, 5: #47A5D9, 6: #9FC150,
 
     }
 }
+
+///******************************* MEDIA *******************************///
+
+//** Max Width **//
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+    .timeline {
+        margin-bottom: 20px;
+        .group {
+            padding: 0;
+            &:before {
+                display: none !important;
+            }
+            .box-time {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        .group {
+            display: block;
+            margin:  0 0;
+            .item {
+                flex:   0 0 100% !important;
+                margin: 110px 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+}
+
+//** Min Width **//
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 768px) {
+    .timeline .group .item {
+        &:nth-child(even) {
+            .box {
+                top:    100%;
+                bottom: auto;
+                &:before {
+                    top:    0;
+                    bottom: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) {
+
+}
+///******************************* MEDIA *******************************///

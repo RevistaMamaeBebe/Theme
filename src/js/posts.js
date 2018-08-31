@@ -36,8 +36,8 @@
 
     Posts.prototype.init = function () {
 
-        $self = this;
-        $app = $.App;
+        $self      = this;
+        $app       = $.App;
         $functions = $.Functions;
 
 

@@ -1,0 +1,60 @@
+.my-account {
+    $avatar: 150px;
+    .header-account {
+        min-height:       180px;
+        background-color: lighten(color('bg'), 68%);
+    }
+    .top-account {
+        padding:          15px 0;
+        background-color: rgba(#000, 0.02);
+        .user-infos {
+            margin-left: $avatar + 20px;
+            h3 {
+                margin: 0;
+                color:  color('bg');
+                @include rem('font-size', 12px);
+                a {
+                    margin-left: 10px;
+                    color: color('info');
+                    @include rem('font-size', 10px);
+                }
+            }
+        }
+    }
+
+    .header-infos {
+        position: relative;
+        .avatar {
+            position:         absolute;
+            top:              -35px;
+            left:             0;
+            width:            $avatar;
+            height:           $avatar;
+            background-color: #FFF;
+            overflow:         hidden;
+            padding:          4px;
+            @include border-radius(50%);
+            @include box-shadow(0px 5px 20px rgba(color('bg'), 0.05));
+            .box-image {
+                @include border-radius(50%);
+            }
+            .change-image {
+                position:         absolute;
+                left:             0;
+                right:            0;
+                bottom:           -100%;
+                background-color: rgba(#000, 0.8);
+                padding:          10px;
+                text-align:       center;
+                color:            #FFF;
+                opacity:          0;
+                @include transition(all .3s ease-in-out);
+            }
+
+            &:hover .change-image {
+                bottom:  0;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -12,15 +12,18 @@
     }
 
     App.prototype.initHeader = function () {
-        $self.navContent.css('min-height', $self.navBar.innerHeight());
 
-        $(window).on('scroll resize', function () {
-            if ($(window).scrollTop() > ($self.navBar.innerHeight())) {
+        $(window).on('scroll resize load', function () {
+
+            var scroll    = $(window).scrollTop(),
+                headerTop = ($('.header-top').length > 0 ? $('.header-top').innerHeight() : 0);
+
+            if (scroll >= headerTop) {
                 $self.header.addClass('fixed');
-            } else {
+            }else{
                 $self.header.removeClass('fixed');
             }
-            $self.navContent.css('min-height', $self.navBar.innerHeight());
+
         });
 
     }
@@ -46,11 +49,6 @@
             $self.overlay.fadeOut();
 
         });
-
-        $(".sidebar-menu .content").mCustomScrollbar(
-            {
-                theme: "minimal-dark"
-            });
     }
 
     App.prototype.init = function () {

@@ -4,14 +4,14 @@ html {
 
 body {
     background: {
-        color:  #FFF;
+        color:  #FBFBFB;
         //image:  url('../images/bg/03.png');
         repeat: repeat;
     }
 }
 
 .page-content {
-    min-height: 400px;
+    min-height: 500px;
     position:   relative;
 }
 
@@ -64,6 +64,7 @@ body {
     bottom:           0;
     right:            0;
 }
+
 $loader: 50px;
 .loader {
     content:          '';
@@ -82,10 +83,16 @@ $loader: 50px;
     @include border-radius(50%);
 }
 
+.box-shadow{
+    background-color: #FFF;
+    @include box-shadow(0 0 32px -9px rgba(0, 0, 0, .1));
+}
+
 ::selection {
     background-color: rgba(color('default'), 1);
     color:            #FFF;
 }
+
 
 //** Plugins **//
 @import "libs/bootstrap/theme";
@@ -109,4 +116,6 @@ $loader: 50px;
 @import "partials/login";
 @import "partials/price";
 @import "partials/payment";
+@import "partials/account";
+@import "partials/search";
 @import "partials/medias";

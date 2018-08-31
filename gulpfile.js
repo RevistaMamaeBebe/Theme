@@ -12,12 +12,14 @@ var gulp        = require('gulp'),
     imagemin    = require('gulp-imagemin'),
     extender    = require('gulp-html-extend'),
     sourcemaps  = require('gulp-sourcemaps'),
-    babel       = require('gulp-babel');
+    babel       = require('gulp-babel'),
+    googleFonts = require('gulp-google-webfonts');
 
 
-var jsjson    = require('./json/js.json'),
-    cssjson   = require('./json/css.json'),
-    fontsjson = require('./json/fonts.json');
+var jsjson       = require('./json/js.json'),
+    cssjson      = require('./json/css.json'),
+    fontsjson    = require('./json/fonts.json'),
+    webfontsjson = require('./json/webfonts.json');
 
 // ** Pastas de arquivos **//
 var jsfiles     = [
@@ -74,7 +76,7 @@ gulp.task('uglify', function () {
 
     return [
         gulp.src(filesConcat).pipe(concat('libs.min.js')).pipe(gulp.dest('build/js')).pipe(connect.reload()),
-        gulp.src(jsfiles).pipe(concat('core.min.js')).pipe(gulp.dest('build/js')).pipe(connect.reload())
+        gulp.src(jsfiles).pipe(concat('core.min.js')).pipe(uglify()).pipe(gulp.dest('build/js')).pipe(connect.reload())
     ];
 });
 
@@ -123,6 +125,26 @@ gulp.task('fonts', function () {
     });
 
     return gulp.src(files).pipe(gulp.dest('build/fonts'))
+});
+
+gulp.task('webfonts', function () {
+
+    var files = Object.keys(fontsjson).map(function (k) {
+        return webfontsjson[k]
+    });
+
+    return gulp.src(files).pipe(gulp.dest('build/webfonts'))
+});
+
+// ** Google fonts **//
+gulp.task('googlefonts', function () {
+    return gulp.src('src/fonts.list').pipe(googleFonts(
+        {
+            fontsDir: 'src/fonts/google/',
+            cssDir: 'src/scss/theme/partials/',
+            cssFilename: '_googlefonts.scss',
+            relativePaths: true
+        })).pipe(gulp.dest(''));
 });
 
 // ** Fica escutando os arquivos **//

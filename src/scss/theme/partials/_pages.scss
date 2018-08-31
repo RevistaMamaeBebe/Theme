@@ -58,8 +58,11 @@
 
 .page-content {
     .page-text {
-        margin:      30px 0;
-        font-family: 'Open Sans', cursive;
+        margin-bottom:    30px;
+        font-family:      'Open Sans', cursive;
+        padding:          15px;
+        background-color: #FFF;
+        @include box-shadow(0 0 32px -9px rgba(0, 0, 0, .1));
         p {
             text-align:  justify;
             color:       #555;
