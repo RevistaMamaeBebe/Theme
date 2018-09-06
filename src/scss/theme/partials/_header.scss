@@ -63,10 +63,7 @@
     .header-top .nav-link,
     .navbar-nav .nav-link {
         text-transform: uppercase;
-        font: {
-            family: 'Open Sans', cursive;
-            weight: 700;
-        }
+        font-weight: 700;
         @include transition(all .3s ease-in-out);
     }
 
@@ -240,13 +237,13 @@
     }
 
     &[data-header="simple"] {
-        $h: 90px;
+        $h: 80px;
         min-height: $h;
         .logo img {
             max-height: $h;
             padding: {
-                top:    20px;
-                bottom: 30px;
+                top:    15px;
+                bottom: 25px;
             }
         }
 

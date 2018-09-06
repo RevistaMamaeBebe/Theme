@@ -3,27 +3,109 @@
 <!-- @@block  =  content-->
 <div class="my-account">
     <div class="header-account">
-        <div class="top-account">
-            <div class="container">
-                <div class="user-infos">
-                    <h3>Bem vindo, <strong>Michel Vieira</strong>
-                        <a href=""><i class="fa fa-id-card-o" aria-hidden="true"></i> Edite as informações da sua conta</a>
-                    </h3>
+        <h3 class="user-name">Michel Vieira</h3>
+        <a href="#" class="avatar">
+            <div class="box-image">
+                <img src="http://endlesstheme.com/Endless1.5.1/img/user.jpg">
+                <div class="change-image">
+                    <i class="fa fa-camera" aria-hidden="true"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+    <nav class="nav-account navbar navbar-expand-lg">
+        <div class="container">
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-address-card-o"></i> Visão geral da
+                    conta</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-edit"></i> Editar perfil</a></li>
+            </ul>
+            <ul class="navbar-nav justify-content-start">
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-key"></i> Mudar senha</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-credit-card"></i> Assinatura</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content-account mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box box-shadow">
+                        <h5 class="box-title">Visão geral</h5>
+                        <form role="form">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                <span class="d-block">Michel Vieira</span>
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <span class="d-block">michelvieira@outlook.com</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Assinatura</label>
+                                <div class="clearfix"></div>
+                                <a href="">
+                                    <span class="badge badge-bg badge-outline p-2">Nenhuma assinatura, assinar</span>
+                                </a>
+                            </div>
+                            <button class="btn btn-round btn-bg btn-block btn-lg mt-5"><i class="fa fa-edit"></i> Editar
+                                perfil
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="box box-shadow">
+                        <h5 class="box-title">Chave de assinatura</h5>
+                        <div class="alert alert-danger" role="alert">
+                            A simple danger alert—check it out!
+                        </div>
+                        <form>
+                            <div class="form-group mb-0">
+                                <span class="d-block mb-3">Possuí uma chave de assinatura? Insira abaixo:</span>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" aria-describedby="button-addon">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-info" type="button" id="button-addon">
+                                            <i class="fa fa-key"></i> Inserir chave</button>
+                                    </div>
+                                </div>
+                                <a href="" class="text-info">
+                                    <span class="btn-block text-right mt-3">Ver minhas chaves</span>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="box box-shadow">
+                        <h5 class="box-title">Histórico de pagamentos</h5>
+                        <table class="table table-bordered mb-0">
+                            <thead>
+                            <tr>
+                                <th>Plano</th>
+                                <th>Forma de pagamento</th>
+                                <th>Valor</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td scope="row">aaa</td>
+                                <td>bbb</td>
+                                <td>ccc</td>
+                                <td>ddd</td>
+                                <td>eee</td>
+                            </tr>
+                             </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="header-infos">
-                <a href="#" class="avatar">
-                    <div class="box-image">
-                        <img src="http://endlesstheme.com/Endless1.5.1/img/user.jpg">
-                        <div class="change-image">
-                            <i class="fa fa-camera" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
     </div>
+
 </div>
 <!-- @@close-->

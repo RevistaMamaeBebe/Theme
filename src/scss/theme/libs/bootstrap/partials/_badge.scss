@@ -1,0 +1,15 @@
+.badge {
+    &.badge-outline {
+        @each $name, $color in $colors {
+            &.badge-#{$name} {
+                border:           1px solid darken($color, 2%);
+                color:            $color;
+                background-color: transparent;
+                &:hover{
+                    background-color: $color;
+                    color: color-yiq($color);
+                }
+            }
+        }
+    }
+}
