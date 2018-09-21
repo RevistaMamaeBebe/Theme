@@ -11,3 +11,27 @@
         transform:         rotate(360deg);
     }
 }
+
+//** Wave **//
+@include keyframes('wave-front') {
+    100% {
+        -webkit-transform: translate(-50%, 0);
+        transform:         translate(-50%, 0);
+    }
+}
+
+@include keyframes('wave-back') {
+    100% {
+        -webkit-transform: translate(50%, 0);
+        transform:         translate(50%, 0);
+    }
+}
+
+@include keyframes('bubble') {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: 0 -280px;
+        }
+}

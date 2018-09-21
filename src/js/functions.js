@@ -27,6 +27,15 @@
         }
     }
 
+    Functions.prototype.daysMonth = function () {
+        var objData = new Date(),
+            numAno  = objData.getFullYear(),
+            numMes  = objData.getMonth() + 1,
+            numDias = new Date(numAno, numMes, 0).getDate();
+
+        return numDias;
+    }
+
     Functions.prototype.init = function () {
 
         $self = this;

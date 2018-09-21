@@ -1,12 +1,13 @@
 .form-group {
 
     font-family: 'Open Sans', cursive;
+    position:    relative;
 
     label {
-        color:          lighten(color('bg'), 30%);
+        color:          lighten(color('secondary'), 30%);
         text-transform: uppercase;
-        font-weight:    700;
-        @include rem(font-size, 10px);
+        font-weight:    600;
+        @include rem(font-size, 8px);
     }
 
     .form-control {
@@ -35,6 +36,18 @@
         text-transform: uppercase;
         font-weight:    700;
         @include rem('font-size', 8px);
+    }
+
+    .text-float {
+        position:         absolute;
+        bottom:           -7px;
+        right:            10px;
+        background-color: #FFF;
+        z-index:          20;
+        &.text-float-left {
+            left:  10px;
+            right: auto;
+        }
     }
 }
 

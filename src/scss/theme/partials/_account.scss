@@ -20,20 +20,30 @@
         @include rem('font-size', 12px);
     }
     .avatar {
-        position:         absolute;
-        bottom:           -50%;
-        left:             50%;
-        width:            $avatar;
-        height:           $avatar;
-        background-color: #FFF;
-        overflow:         hidden;
-        padding:          4px;
-        z-index:          10;
+        position: absolute;
+        bottom:   -50%;
+        left:     50%;
+        width:    $avatar;
+        height:   $avatar;
+        cursor:   pointer;
+        background: {
+            color:    #FFF;
+            image:    url('../images/avatar.png');
+            size:     60%;
+            position: center center;
+            repeat:   no-repeat;
+        }
+        overflow: hidden;
+        padding:  4px;
+        z-index:  10;
         @include transform(translate(-50%, 0));
         @include border-radius(50%);
         @include box-shadow(0px 5px 20px rgba(color('bg'), 0.05));
         .box-image {
             @include border-radius(50%);
+        }
+        img {
+            background-color: #FFF;
         }
         .change-image {
             position:         absolute;

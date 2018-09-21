@@ -4,14 +4,14 @@ html {
 
 body {
     background: {
-        color:  #FBFBFB;
+        color:  #F3F3F8;
         //image:  url('../images/bg/03.png');
         repeat: repeat;
     }
 }
 
 .page-content {
-    min-height: 500px;
+    min-height: 320px;
     position:   relative;
 }
 
@@ -83,8 +83,9 @@ $loader: 50px;
     @include border-radius(50%);
 }
 
-.box-shadow{
+.box-shadow {
     background-color: #FFF;
+    @include border-radius(10px);
     @include box-shadow(0 0 32px -9px rgba(0, 0, 0, .1));
 }
 
@@ -93,10 +94,10 @@ $loader: 50px;
     color:            #FFF;
 }
 
-
 //** Plugins **//
 @import "libs/bootstrap/theme";
 @import "libs/owl.carousel";
+@import "libs/countdown";
 
 //** Theme **//
 @import "partials/fonts";
@@ -118,4 +119,5 @@ $loader: 50px;
 @import "partials/payment";
 @import "partials/account";
 @import "partials/search";
+@import "partials/contents";
 @import "partials/medias";

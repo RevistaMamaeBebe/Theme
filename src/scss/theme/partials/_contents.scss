@@ -1,0 +1,68 @@
+.contents {
+    .box-contents {
+        font-family: 'Open Sans', cursive;
+        overflow:    hidden;
+        margin:      15px 0;
+        position:    relative;
+    }
+    .box-image {
+        height: 280px;
+    }
+    .content-contents {
+        position:         absolute;
+        bottom:           0;
+        left:             0;
+        right:            0;
+        padding:          12px;
+        background-color: rgba(color('bg'), 0.7);
+        h3 {
+            text-transform: uppercase;
+            font-weight:    700;
+            padding-right:  50px;
+            overflow:       hidden;
+            white-space:    nowrap;
+            text-overflow:  ellipsis;
+            color:          lighten(color('bg'), 55%);
+            @include rem('font-size', 10px);
+        }
+        .votes {
+            color: lighten(color('bg'), 60%);
+            @include rem('font-size', 9px);
+            &:before {
+                font:         normal normal normal 14px/1 FontAwesome;
+                content:      "\f08a";
+                margin-right: 5px;
+                color:        color('danger');
+            }
+            &.votes-up:before {
+                content: "\f004";
+            }
+        }
+        .vote-up {
+            position:        absolute;
+            top:             -25px;
+            right:           15px;
+            width:           50px;
+            height:          50px;
+            display:         flex;
+            align-items:     center;
+            justify-content: center;
+            cursor:          pointer;
+            @extend .box-shadow;
+            @include box-shadow(0 0 0 6px rgba(#000, 0.2));
+            @include border-radius(50%);
+            @include transition(all .2s ease-in-out);
+            &:before {
+                font:    normal normal normal 16px/1 FontAwesome;
+                content: "\f004";
+                color:   color('danger');
+            }
+            &:hover {
+                background-color: color('danger');
+                &:before {
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}
