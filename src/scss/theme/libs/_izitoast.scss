@@ -1,0 +1,16 @@
+.iziToast {
+    @each $name, $color in $colors {
+        &.iziToast-color-#{$name} {
+            background-color: rgba($color, .9);
+            border-color:     rgba($color, .9);
+            .iziToast-body {
+                .iziToast-title, .iziToast-icon {
+                    color: color-yiq($color);
+                }
+                .iziToast-message {
+                    color: rgba(color-yiq($color), .8);
+                }
+            }
+        }
+    }
+}

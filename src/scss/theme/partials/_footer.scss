@@ -1,12 +1,37 @@
 $h: 90px;
 
+.cloud-footer {
+    position: relative;
+    height:   386px;
+    img {
+        position:  absolute;
+        bottom:    0;
+        left:      0;
+        max-width: 100%;
+    }
+    img[data-cloud="1"] {
+        z-index: 10;
+    }
+    img[data-cloud="2"] {
+        z-index: 9;
+    }
+}
+
 //** Grid posts **//
 .footer {
-    display:          inline-block;
-    width:            100%;
-    margin-top:       30px;
+    margin-top: 30px;
+    display:    inline-block;
+    width:      100%;
+    position:   relative;
     background: {
-        color:  color('bg');
+        color: color('bg');
+    }
+    &:before {
+        content: '';
+        width:   100%;
+        height:  6px;
+        display: block;
+        @include background-horizontal(color('info'), color('default'));
     }
 
     .top {
@@ -19,7 +44,7 @@ $h: 90px;
                 family: 'Open Sans', cursive;
                 weight: 600;
             }
-            color:          #fff;
+            color:          #FFF;
             @include rem('font-size', 9px);
         }
 
@@ -34,7 +59,7 @@ $h: 90px;
         border-top:     1px solid rgba(#000, 0.1);
         padding:        20px 0;
         text-align:     center;
-        color:          #fff;
+        color:          #FFF;
         text-transform: uppercase;
         @include rem('font-size', 10px);
     }

@@ -52,6 +52,13 @@
                         });
     }
 
+    Plugins.prototype.initLightBox = function () {
+        var defaults = {
+            animation: 'fadeIn'
+        };
+        baguetteBox.run('[data-gallery="contents"]', $.extend({}, defaults));
+    }
+
     Plugins.prototype.waitMe = function (type, element, effect) {
         if (type == 'load') {
             $(element).waitMe(
@@ -209,6 +216,19 @@
             '</div>');
     }
 
+    Plugins.getAlert = function (title, message, color, icon, position) {
+        iziToast.show(
+            {
+                icon: (icon ? icon : 'fa fa-check'),
+                title: title,
+                message: message,
+                position: (position ? position : 'bottomCenter'),
+                layout: 2,
+                color: (color ? color : 'success'),
+                animateInside: false,
+            });
+    }
+
     Plugins.prototype.init = function () {
 
         $self      = this;
@@ -221,6 +241,7 @@
         this.initLoadButton();
         this.initLazy();
         this.initCountdown();
+        this.initLightBox();
 
     }
 

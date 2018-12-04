@@ -79,6 +79,38 @@
     background: radial-gradient(ellipse at center, $startColor $startPos,$endColor $endPos);
 }
 
+/// Border Gradient
+/// @param {Color} $startColor [#3C3C3C] - Start Color
+/// @param {Color} $endColor [#999999] - End Color
+
+@mixin border-gradient($startColor: #3C3C3C, $endColor: #999999) {
+    border-color: $startColor;
+    border-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    border-image: -webkit-linear-gradient(top, $startColor, $endColor);
+    border-image:    -moz-linear-gradient(top, $startColor, $endColor);
+    border-image:     -ms-linear-gradient(top, $startColor, $endColor);
+    border-image:      -o-linear-gradient(top, $startColor, $endColor);
+    border-image:         linear-gradient(top, $startColor, $endColor);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
+}
+
+
+/// Border Horizontal
+/// @param {Color} $startColor [#3C3C3C] - Start Color
+/// @param {Color} $endColor [#999999] - End Color
+
+@mixin border-horizontal($startColor: #3C3C3C, $endColor: #999999) {
+    border-color: $startColor;
+    border-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+    border-image: -webkit-linear-gradient(left, $startColor, $endColor);
+    border-image:    -moz-linear-gradient(left, $startColor, $endColor);
+    border-image:     -ms-linear-gradient(left, $startColor, $endColor);
+    border-image:      -o-linear-gradient(left, $startColor, $endColor);
+    border-image:         linear-gradient(left, $startColor, $endColor);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
+}
+
+
 
 /// Background Size
 /// @param {Size} $width [100%] - Width

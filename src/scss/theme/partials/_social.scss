@@ -28,7 +28,7 @@ $social: (facebook: color('facebook'), twitter: color('twitter'), whatsapp: colo
         }
         h3 {
             margin: {
-                top:    5px;
+                top:    8px;
                 bottom: 0;
             }
             @include rem('font-size', 11px);

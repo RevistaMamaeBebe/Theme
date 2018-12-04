@@ -1,4 +1,10 @@
 .contents {
+    .title-contents {
+        text-align: center;
+        h2 {
+            @include rem('font-size', 30px);
+        }
+    }
     .box-contents {
         font-family: 'Open Sans', cursive;
         overflow:    hidden;
@@ -18,7 +24,7 @@
         h3 {
             text-transform: uppercase;
             font-weight:    700;
-            padding-right:  50px;
+            padding-right:  60px;
             overflow:       hidden;
             white-space:    nowrap;
             text-overflow:  ellipsis;
@@ -28,14 +34,14 @@
         .votes {
             color: lighten(color('bg'), 60%);
             @include rem('font-size', 9px);
+            span {
+                float: right;
+            }
             &:before {
                 font:         normal normal normal 14px/1 FontAwesome;
-                content:      "\f08a";
+                content:      "\f004";
                 margin-right: 5px;
                 color:        color('danger');
-            }
-            &.votes-up:before {
-                content: "\f004";
             }
         }
         .vote-up {
@@ -48,19 +54,58 @@
             align-items:     center;
             justify-content: center;
             cursor:          pointer;
+            outline:         none;
             @extend .box-shadow;
             @include box-shadow(0 0 0 6px rgba(#000, 0.2));
             @include border-radius(50%);
             @include transition(all .2s ease-in-out);
             &:before {
-                font:    normal normal normal 16px/1 FontAwesome;
-                content: "\f004";
-                color:   color('danger');
+                font:       normal normal normal 16px/1 FontAwesome;
+                content:    "\f004";
+                color:      color('danger');
+                margin-top: -9px;
+            }
+            &:after {
+                content:        "Votar";
+                position:       absolute;
+                top:            50%;
+                left:           50%;
+                margin-top:     9px;
+                text-transform: uppercase;
+                font-weight:    700;
+                color:          lighten(color('main'), 10%);
+                @include rem('font-size', 7px);
+                @include transform(translate(-50%, -50%));
             }
             &:hover {
                 background-color: color('danger');
-                &:before {
+                &:before,
+                &:after {
                     color: #FFF;
+                }
+            }
+            &[data-loading] {
+                background-color: color('danger');
+                opacity:          1;
+                cursor:           not-allowed;
+                &:before {
+                    display: none;
+                }
+            }
+            &[data-vote=true] {
+                background-color: color('danger');
+                &:before {
+                    content: "\f00c";
+                    color:   #FFF;
+                }
+            }
+            &[data-loading],
+            &[data-vote=true] {
+                &:before {
+                    margin: 0;
+                }
+                &:after {
+                    display: none;
                 }
             }
         }

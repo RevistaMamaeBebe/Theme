@@ -3,10 +3,13 @@ html {
 }
 
 body {
+    font-family: 'Baloo', cursive;
+    color:       color('main');
     background: {
-        color:  #F3F3F8;
-        //image:  url('../images/bg/03.png');
-        repeat: repeat;
+        color:  #FFF;
+        //image:  url('../images/bg/main.jpg');
+        //repeat: repeat;
+        //position: center center;
     }
 }
 
@@ -86,7 +89,7 @@ $loader: 50px;
 .box-shadow {
     background-color: #FFF;
     @include border-radius(10px);
-    @include box-shadow(0 0 32px -9px rgba(0, 0, 0, .1));
+    @include box-shadow(0 5px 32px 0px rgba(0, 0, 0, .04));
 }
 
 ::selection {
@@ -98,6 +101,7 @@ $loader: 50px;
 @import "libs/bootstrap/theme";
 @import "libs/owl.carousel";
 @import "libs/countdown";
+@import "libs/izitoast";
 
 //** Theme **//
 @import "partials/fonts";

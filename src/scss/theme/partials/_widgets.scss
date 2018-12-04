@@ -4,8 +4,7 @@ $social: (facebook: color('facebook'), twitter: color('twitter'), linkedin: colo
 .widget {
     margin-bottom:    30px;
     padding:          30px;
-    background-color: #FFF;
-    @include box-shadow(0 0 32px -9px rgba(0, 0, 0, .1));
+    @extend .box-shadow;
     .ads {
         width: 100%;
     }

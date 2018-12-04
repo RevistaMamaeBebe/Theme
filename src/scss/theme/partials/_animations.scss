@@ -28,10 +28,42 @@
 }
 
 @include keyframes('bubble') {
-        from {
-            background-position: 0 0;
-        }
-        to {
-            background-position: 0 -280px;
-        }
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -280px;
+    }
+}
+
+//** MoveClouds **//
+@include keyframes('moveclouds') {
+    0% {
+        margin-left: 100%;
+    }
+    100% {
+        margin-left: -600px;
+    }
+}
+
+//** Plane **//
+@include keyframes('moveplane') {
+    $move: 100px;
+    0% {
+        top: 0px;
+    }
+    25% {
+        top: $move;
+        transform: rotate(45deg);
+    }
+    50% {
+        top: 0px;
+    }
+    75% {
+        top: $move + 100px;
+    }
+    100% {
+        top: 0px;
+    }
+
 }

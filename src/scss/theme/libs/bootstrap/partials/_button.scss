@@ -3,10 +3,11 @@
     font-weight:    700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    @include rem(font-size, 9.5px !important);
+    @include rem(font-size, 9px !important);
 
     &.btn-lg {
-        padding: .8rem 1rem;
+        padding: .79rem 1rem;
+        height:  44px;
     }
 
     &.btn-loading {
@@ -26,7 +27,7 @@
                 border-color:     darken($color, 2%);
                 background-color: $color;
                 @include box-shadow(1px 3px 8px 0 rgba($color, .5));
-                &:hover{
+                &:hover {
                     @include box-shadow(1px 1px 8px 0 rgba($color, .9));
                 }
             }
@@ -57,6 +58,18 @@
         @each $name, $color in $colors {
             &.btn-#{$name} {
                 @include box-shadow(0 3px 0 0 darken($color, 5%));
+            }
+        }
+    }
+
+    &.btn-opacity {
+        @each $name, $color in $colors {
+            &.btn-#{$name} {
+                background-color: lighten($color, 15%);
+                border-color:     $color;
+                &:hover, &:active {
+                    background-color: $color;
+                }
             }
         }
     }

@@ -37,9 +37,7 @@
     }
 
     Functions.prototype.init = function () {
-
         $self = this;
-
     }
 
     //init
